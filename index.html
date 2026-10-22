@@ -255,6 +255,93 @@
   .chat-foot{padding:10px 14px 24px;border-top:1px solid var(--line);display:flex;gap:10px}
   .chat-foot input{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:10px 16px;color:var(--txt);font-size:14px;outline:none}
   .chat-foot button{border:none;border-radius:20px;padding:0 20px;background:linear-gradient(90deg,var(--accent),#ff7b54);color:#fff;font-weight:700}
+  /* ---------- 登录 ---------- */
+  #login{position:fixed;inset:0;z-index:500;background:linear-gradient(170deg,#1a1030,#0c0d12 60%);
+    max-width:414px;margin:0 auto;display:none;flex-direction:column;padding:46px 26px;color:var(--txt)}
+  #login.active{display:flex}
+  #login .llogo{font-size:30px;font-weight:900;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center}
+  #login .lsub{text-align:center;font-size:12px;color:var(--txt2);margin:8px 0 30px}
+  #login input{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:14px;
+    padding:13px 14px;color:var(--txt);font-size:15px;outline:none;margin-bottom:12px}
+  #login .code-row{display:flex;gap:10px}
+  #login .code-row input{flex:1;margin-bottom:0}
+  #login .code-btn{flex:0 0 92px;height:48px;border:none;border-radius:14px;background:var(--panel2);
+    border:1px solid var(--accent);color:var(--accent);font-size:13px;font-weight:700}
+  #login .divider{text-align:center;font-size:11px;color:var(--txt2);margin:18px 0;position:relative}
+  #login .divider::before,#login .divider::after{content:'';position:absolute;top:50%;width:34%;height:1px;background:var(--line)}
+  #login .divider::before{left:0}#login .divider::after{right:0}
+  #login .third{display:flex;justify-content:center;gap:26px}
+  #login .third div{text-align:center;cursor:pointer;font-size:11px;color:var(--txt2)}
+  #login .third .ti{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:22px;margin:0 auto 6px}
+  #login .agree{font-size:11px;color:var(--txt2);text-align:center;margin-top:auto;padding-top:20px;line-height:1.7}
+  .ava-pick{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
+  .ava-pick .ap{width:48px;height:48px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer}
+  .ava-pick .ap.on{border-color:var(--accent);background:rgba(255,77,109,.12)}
+  /* ---------- 广场 ---------- */
+  .feed{padding:14px 16px;border-bottom:1px solid var(--line)}
+  .feed .fhead{display:flex;gap:10px;align-items:center}
+  .feed .fhead .ava{width:38px;height:38px;font-size:19px;cursor:pointer}
+  .feed .fname{font-size:14px;font-weight:600}
+  .feed .ftime{font-size:11px;color:var(--txt2)}
+  .feed .ftext{font-size:14px;line-height:1.55;margin:8px 0}
+  .feed .fimgs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+  .feed .fimg{height:100px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:34px;background:var(--panel2)}
+  .feed .fops{display:flex;gap:22px;font-size:12px;color:var(--txt2)}
+  .feed .fops span{cursor:pointer}
+  .feed .fops span.on{color:var(--accent)}
+  .feed .cmt{background:var(--panel2);border-radius:8px;padding:8px 10px;font-size:12px;color:var(--txt2);margin-top:8px;line-height:1.7}
+  .fab{position:fixed;right:16px;bottom:84px;width:52px;height:52px;border-radius:26px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;
+    font-size:26px;box-shadow:0 6px 18px rgba(255,77,109,.35);z-index:40;cursor:pointer}
+  /* ---------- 任务 / 签到 / 钱包 ---------- */
+  .checkin-row{display:flex;gap:6px;padding:16px 12px}
+  .ck{flex:1;text-align:center;border:1px solid var(--line);border-radius:12px;padding:10px 0;background:var(--panel2)}
+  .ck.done{background:rgba(255,197,61,.12);border-color:var(--gold);color:var(--gold)}
+  .ck.today{outline:1px solid var(--accent)}
+  .ck .cd{font-size:10px;color:var(--txt2)} .ck .cc{font-size:17px;margin:4px 0}
+  .ck.done .cd{color:rgba(255,197,61,.7)}
+  .task-row{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+  .task-row .tp{flex:1}
+  .task-row .tprog{height:6px;background:var(--panel2);border-radius:3px;margin-top:6px;overflow:hidden}
+  .task-row .tprog i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#ff7b54)}
+  .tbtn{padding:7px 14px;border-radius:12px;background:var(--panel2);color:var(--txt2);font-size:12px;font-weight:600}
+  .tbtn.able{background:linear-gradient(90deg,var(--gold),#ff7b54);color:#fff}
+  .wcard{margin:16px;border-radius:14px;padding:16px;border:1px solid var(--line);background:var(--panel)}
+  .wcard .wbig{font-size:26px;font-weight:800;margin:6px 0 12px}
+  /* ---------- 他人主页 ---------- */
+  .prof-head{padding:22px 16px 14px;text-align:center;border-bottom:1px solid var(--line)}
+  .prof-head .pa{width:80px;height:80px;border-radius:50%;background:var(--panel2);border:2px solid var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 10px}
+  .prof-stat{display:flex;justify-content:center;gap:34px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .prof-stat div{text-align:center}
+  .prof-stat b{display:block;font-size:16px}
+  .prof-stat span{font-size:11px;color:var(--txt2)}
+  .prof-ops{display:flex;gap:10px;padding:14px 16px}
+  .prof-ops .po{flex:1;text-align:center;padding:11px 0;border-radius:12px;background:var(--panel2);
+    border:1px solid var(--line);font-size:13px;font-weight:600;cursor:pointer}
+  .prof-ops .po.primary{background:linear-gradient(90deg,var(--accent),#ff7b54);border:none;color:#fff}
+  /* ---------- PK / 麦位 ---------- */
+  .pkbar{position:absolute;top:92px;left:12px;right:12px;z-index:5;display:flex;align-items:center;gap:8px}
+  .pkside{flex:1;height:7px;background:rgba(255,255,255,.18);border-radius:4px;overflow:hidden}
+  .pkside i{display:block;height:100%;transition:width .6s}
+  .pkbar .pkvs{font-size:11px;font-weight:800;color:var(--gold)}
+  .pkbar .pklab{font-size:10px;color:#fff;background:rgba(0,0,0,.35);padding:2px 8px;border-radius:10px;white-space:nowrap}
+  .mics{position:absolute;right:12px;top:150px;z-index:5;display:flex;flex-direction:column;gap:8px}
+  .mic{width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.4);border:1px dashed rgba(255,255,255,.4);
+    display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer}
+  .mic.on{border-style:solid;border-color:var(--accent);background:rgba(255,77,109,.2)}
+  /* ---------- 聊天附加 ---------- */
+  .bub .b.big{font-size:36px;background:none;padding:0}
+  .bub .b.voice{display:flex;align-items:center;gap:8px}
+  .chat-foot .cfbtn{width:38px;height:38px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;flex-shrink:0}
+  .emoji-pack{display:flex;gap:14px;font-size:36px;flex-wrap:wrap;justify-content:center;margin-bottom:16px;cursor:pointer}
+  .search-bar{display:flex;gap:10px;padding:0 16px 12px}
+  .search-bar input{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:16px;
+    padding:10px 14px;color:var(--txt);font-size:14px;outline:none}
   /* toast */
   #toast{position:fixed;top:18%;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.8);color:#fff;
     padding:10px 22px;border-radius:20px;font-size:13px;z-index:999;display:none;max-width:80%;text-align:center}
@@ -268,7 +355,10 @@
   <div class="page active" id="pg-home">
     <div class="topbar">
       <span class="logo">星遇 Live</span>
-      <span class="coinchip" onclick="openRecharge()">🪙 <b id="coinTop">5,200</b> <span style="color:var(--txt2);font-size:12px">充值</span></span>
+      <div style="display:flex;gap:8px;align-items:center">
+        <span class="coinchip" onclick="openSearch()">🔍</span>
+        <span class="coinchip" onclick="openRecharge()">🪙 <b id="coinTop">5,200</b> <span style="color:var(--txt2);font-size:12px">充值</span></span>
+      </div>
     </div>
     <div class="cats" id="homeCats"></div>
     <div id="followStripWrap" style="display:none">
@@ -278,6 +368,13 @@
     <div class="sec-title">热门直播 <span id="liveCnt"></span></div>
     <div class="grid" id="liveGrid"></div>
     <div style="height:20px"></div>
+  </div>
+
+  <!-- ================= 广场（动态） ================= -->
+  <div class="page" id="pg-feed">
+    <div class="topbar"><span class="logo">广场</span><span class="coinchip" onclick="openSearch()">🔍 搜索</span></div>
+    <div id="feedList"></div>
+    <div class="fab" onclick="openPostSheet()">✍️</div>
   </div>
 
   <!-- ================= 交友 ================= -->
@@ -303,9 +400,9 @@
   <div class="page" id="pg-me">
     <div class="topbar"><span class="logo">我的</span></div>
     <div class="me-head">
-      <div class="me-ava">🙋‍♂️</div>
+      <div class="me-ava" id="meAva">🙋‍♂️</div>
       <div>
-        <div style="font-size:17px;font-weight:700">海曙 <span class="lv" id="meLv">Lv.8</span></div>
+        <div style="font-size:17px;font-weight:700"><span id="meName">海曙</span> <span class="lv" id="meLv">Lv.8</span></div>
         <div style="font-size:12px;color:var(--txt2);margin-top:4px">ID: 20261022 · 真实认证 ✔</div>
       </div>
     </div>
@@ -314,8 +411,8 @@
       <div class="big" id="coinMe">5,200</div>
       <div class="wrow">
         <div class="wbtn primary" onclick="openRecharge()">立即充值</div>
+        <div class="wbtn" onclick="openSub('pg-wallet')">钱包</div>
         <div class="wbtn" onclick="openSub('pg-ledger')">明细</div>
-        <div class="wbtn" onclick="toast('主播收益在开播结算中体现')">收益</div>
       </div>
     </div>
     <div class="lvbar">
@@ -324,6 +421,8 @@
       <div style="font-size:10px;color:var(--txt2);margin-top:6px">消费星币提升等级，解锁专属徽章与进场特效</div>
     </div>
     <div class="menulist">
+      <div class="mrow" onclick="openSub('pg-wallet')">💰 我的钱包 <span class="r">🪙<span id="meCoin">0</span> · 💎<span id="meEarn">0</span> ›</span></div>
+      <div class="mrow" onclick="openSub('pg-tasks')">📅 签到与任务 <span class="r">领星币 ›</span></div>
       <div class="mrow" onclick="openSub('pg-follows')">❤️ 我的关注 <span class="r" id="followCnt">0 ›</span></div>
       <div class="mrow" onclick="openStart()">📷 我要开播 <span class="r">认证主播 ›</span></div>
       <div class="mrow" onclick="toast('实名认证：已通过（演示）')">🪪 实名认证 <span class="r">已认证 ›</span></div>
@@ -335,8 +434,9 @@
   <!-- ================= TabBar ================= -->
   <div class="tabbar">
     <div class="tab on" data-p="home" onclick="go('home')"><span class="ico">🏠</span>首页</div>
-    <div class="tab" data-p="friend" onclick="go('friend')"><span class="ico">💕</span>邂逅</div>
+    <div class="tab" data-p="feed" onclick="go('feed')"><span class="ico">🌍</span>广场</div>
     <div class="tab" onclick="openStart()"><span class="tab-live-btn">📷</span><span style="margin-top:2px">开播</span></div>
+    <div class="tab" data-p="friend" onclick="go('friend')"><span class="ico">💕</span>邂逅</div>
     <div class="tab" data-p="msg" onclick="go('msg')"><span class="ico">💬</span>消息<span class="badge" id="msgDot" style="display:none">0</span></div>
     <div class="tab" data-p="me" onclick="go('me')"><span class="ico">👤</span>我的</div>
   </div>
@@ -351,6 +451,14 @@
         <div class="room-close" onclick="closeRoom()">✕</div>
       </div>
       <div class="online" onclick="openRank()">👁 <span id="onlineCnt">0</span> 观看 · <span id="heatCnt">🔥热度 0</span></div>
+      <div class="pkbar">
+        <span class="pklab">我队</span>
+        <div class="pkside"><i id="pkA" style="width:50%;background:linear-gradient(90deg,var(--accent),#ff7b54)"></i></div>
+        <span class="pkvs">PK</span>
+        <div class="pkside"><i id="pkB" style="width:50%;background:linear-gradient(90deg,#4d9cff,#7c5cff)"></i></div>
+        <span class="pklab">对方</span>
+      </div>
+      <div class="mics" id="micSlots"></div>
       <div class="danmaku" id="danmaku"></div>
       <div id="giftLayer"></div>
       <div class="room-bar">
@@ -382,7 +490,7 @@
       <div class="hstats">
         <div class="hstat"><b id="hDur">00:00</b><span>直播时长</span></div>
         <div class="hstat"><b id="hViews">0</b><span>观看</span></div>
-        <div class="hstat"><b id="hIncome" style="color:var(--gold)">0</b><span>礼物收益🪙</span></div>
+        <div class="hstat"><b id="hIncome" style="color:var(--green)">0</b><span>礼物收益💎</span></div>
       </div>
       <div class="endbtn" onclick="confirmEndLive()">■ 下播</div>
       <div class="host-tools">
@@ -405,7 +513,9 @@
     <div class="chat-top"><span class="back" onclick="closeChat()">‹</span><div class="ava" id="chatAva" style="width:34px;height:34px;font-size:18px">🙂</div><b id="chatName">—</b><span style="margin-left:auto;font-size:12px;color:var(--txt2)" onclick="toast('举报/拉黑（演示）')">···</span></div>
     <div class="chat-body" id="chatBody"></div>
     <div class="chat-foot">
+      <span class="cfbtn" onclick="openPack()">😀</span>
       <input id="chatInput" placeholder="发消息…" onkeydown="if(event.key==='Enter')sendChatMsg()">
+      <span class="cfbtn" onclick="sendVoice()">🎙</span>
       <button onclick="sendChatMsg()">发送</button>
     </div>
   </div>
@@ -432,7 +542,8 @@
         <div class="mrow" onclick="toast('已清空缓存（演示）')">🧹 清除图片缓存 <span class="r">›</span></div>
         <div class="mrow" onclick="wipeData()">🗑 清空本地数据 <span class="r">›</span></div>
         <div class="mrow" onclick="toast('用户协议 / 隐私政策（演示）')">📄 用户协议与隐私 <span class="r">›</span></div>
-        <div class="mrow" onclick="toast('星遇 Live v2.0 · 演示版')">ℹ️ 关于 <span class="r">v2.0 ›</span></div>
+        <div class="mrow" onclick="toast('星遇 Live v3.0 · 演示版')">ℹ️ 关于 <span class="r">v3.0 ›</span></div>
+        <div class="mrow" style="color:var(--accent)" onclick="logout()">🚪 退出登录 <span class="r">›</span></div>
       </div>
     </div>
   </div>
@@ -559,6 +670,127 @@
     <div class="body" id="convSheetBody"></div>
   </div>
 
+  <!-- ================= 登录 / 注册 ================= -->
+  <div id="login">
+    <div class="llogo">星遇 Live</div>
+    <div class="lsub">直播 · 交友 · 遇见有趣的灵魂</div>
+
+    <div id="loginStep1">
+      <div class="code-row">
+        <input id="phoneInput" type="tel" placeholder="请输入手机号" maxlength="11">
+        <button class="code-btn" id="codeBtn" onclick="sendCode()">获取验证码</button>
+      </div>
+      <input id="codeInput" type="text" placeholder="4 位验证码（演示：任意 4 位）" maxlength="4">
+      <div class="divider">或使用第三方登录</div>
+      <div class="third">
+        <div onclick="doWechatLogin()"><div class="ti" style="background:var(--wechat)">💬</div>微信</div>
+        <div onclick="toast('QQ 登录（演示）')"><div class="ti" style="background:#12b7f5">🐧</div>QQ</div>
+        <div onclick="toast('Apple 登录（演示）')"><div class="ti" style="background:#fff;color:#000">🍎</div>Apple</div>
+      </div>
+      <button class="bigbtn" style="margin-top:22px" onclick="doPhoneLogin()">登录 / 注册</button>
+    </div>
+
+    <div id="loginStep2" style="display:none">
+      <div style="text-align:center;font-size:15px;font-weight:700;margin-bottom:6px">完善你的资料</div>
+      <div style="text-align:center;font-size:12px;color:var(--txt2);margin-bottom:18px">选个头像，取个好听的名字</div>
+      <div class="ava-pick" id="avaPick"></div>
+      <input id="nickInput" placeholder="昵称" maxlength="12" value="海曙">
+      <button class="bigbtn" onclick="finishSignup()">进入星遇</button>
+    </div>
+
+    <div class="agree">登录即代表同意《用户协议》与《隐私政策》<br>未成年人请在监护人陪同下使用 · 本页为演示，不产生真实短信</div>
+  </div>
+
+  <!-- ================= 子页面：搜索 ================= -->
+  <div class="subpage" id="pg-search">
+    <div class="sub-head"><span class="back" onclick="closeSub('pg-search')">‹</span>搜索</div>
+    <div class="search-bar" style="padding-top:12px"><input id="searchInput" placeholder="搜索主播 / 用户" oninput="renderSearch(this.value)"></div>
+    <div class="sub-body" id="searchList"></div>
+  </div>
+
+  <!-- ================= 子页面：他人主页 ================= -->
+  <div class="subpage" id="pg-profile">
+    <div class="sub-head"><span class="back" onclick="closeSub('pg-profile')">‹</span>个人主页</div>
+    <div class="sub-body" id="profileBody"></div>
+  </div>
+
+  <!-- ================= 子页面：任务中心 ================= -->
+  <div class="subpage" id="pg-tasks">
+    <div class="sub-head"><span class="back" onclick="closeSub('pg-tasks')">‹</span>签到与任务</div>
+    <div class="sub-body">
+      <div style="padding:16px 16px 0;font-size:14px;font-weight:700">📅 连续签到</div>
+      <div class="checkin-row" id="checkinRow"></div>
+      <button class="bigbtn" style="width:calc(100% - 32px);margin:0 16px" id="checkinBtn" onclick="doCheckin()">今日签到</button>
+      <div style="padding:20px 16px 8px;font-size:14px;font-weight:700">🎯 每日任务</div>
+      <div id="taskList"></div>
+    </div>
+  </div>
+
+  <!-- ================= 子页面：钱包 ================= -->
+  <div class="subpage" id="pg-wallet">
+    <div class="sub-head"><span class="back" onclick="closeSub('pg-wallet')">‹</span>我的钱包</div>
+    <div class="sub-body">
+      <div class="wcard" style="background:linear-gradient(135deg,#2a2110,#1c1e28);border-color:#4d3d16">
+        <div style="font-size:12px;color:var(--txt2)">🪙 星币余额（用于送礼）</div>
+        <div class="wbig" id="wCoin" style="color:var(--gold)">0</div>
+        <div style="display:flex;gap:10px">
+          <div class="wbtn primary" style="flex:1" onclick="openRecharge()">充值</div>
+          <div class="wbtn" style="flex:1" onclick="closeSub('pg-wallet');openSub('pg-ledger')">明细</div>
+        </div>
+      </div>
+      <div class="wcard">
+        <div style="font-size:12px;color:var(--txt2)">💎 直播收益（可提现，100💎 = ¥1）</div>
+        <div class="wbig" id="wEarn" style="color:var(--green)">0</div>
+        <div style="display:flex;gap:10px">
+          <div class="wbtn" style="flex:1;background:rgba(46,213,115,.14);color:var(--green)" onclick="openWithdraw()">提现</div>
+          <div class="wbtn" style="flex:1" onclick="toast('收益明细见下方账本（演示）')">结算规则</div>
+        </div>
+        <div style="font-size:11px;color:var(--txt2);margin-top:12px">累计已提现：<b id="wWithdrawn">0</b> 💎</div>
+      </div>
+      <div style="padding:0 16px;font-size:11px;color:var(--txt2);line-height:1.8">
+        规则说明：礼物收益平台分成 50%，每日可提现 1 次，满 1000💎 起提，T+1 到账（正式版对接商户付款到零钱）。
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：发布动态 ================= -->
+  <div class="sheet" id="postSheet">
+    <div class="mask" onclick="closeSheet('postSheet')"></div>
+    <div class="body">
+      <h3>✍️ 发布动态</h3>
+      <textarea id="postText" placeholder="此刻的想法…" maxlength="140" style="width:100%;height:90px;background:var(--panel2);
+        border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--txt);font-size:14px;outline:none;resize:none"></textarea>
+      <div style="font-size:12px;color:var(--txt2);margin:10px 0 8px">添加配图（点击选择 emoji 占位）</div>
+      <div class="emoji-row" id="postImgRow" style="font-size:26px"></div>
+      <button class="bigbtn" onclick="doPost()">发布</button>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：提现 ================= -->
+  <div class="sheet" id="withdrawSheet">
+    <div class="mask" onclick="closeSheet('withdrawSheet')"></div>
+    <div class="body">
+      <span class="close-x" onclick="closeSheet('withdrawSheet')">✕</span>
+      <h3>💎 收益提现</h3>
+      <div style="font-size:12px;color:var(--txt2);margin-bottom:10px">可提现 <b id="wdAvail" style="color:var(--green)">0</b> 💎 · 100💎 = ¥1</div>
+      <div class="amounts" id="wdGrid" style="grid-template-columns:repeat(3,1fr)"></div>
+      <div class="payrow">
+        <div class="payopt wechat sel" id="wdWechat" onclick="pickWd('wechat')"><span class="payico w">微</span>微信零钱</div>
+        <div class="payopt alipay" id="wdAlipay" onclick="pickWd('alipay')"><span class="payico a">支</span>支付宝</div>
+      </div>
+      <button class="bigbtn" id="wdBtn" onclick="doWithdraw()">确认提现</button>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：表情包 ================= -->
+  <div class="sheet" id="packSheet">
+    <div class="mask" onclick="closeSheet('packSheet')"></div>
+    <div class="body">
+      <h3>😀 表情包</h3>
+      <div class="emoji-pack" id="packRow"></div>
+    </div>
+  </div>
+
   <div id="toast"></div>
 </div>
 
@@ -609,17 +841,22 @@ const REPLY_POOL = ['嗯嗯，你说 👀','哈哈哈我也是！','在忙，晚
 /* ============ 持久化 ============ */
 const KEY = 'starlive_v2';
 const S = {
-  coins:5200, follows:new Set(), payMethod:'wechat', amtSel:0, customMode:false,
+  user:null, coins:5200, earn:0, withdrawn:0, follows:new Set(), payMethod:'wechat', amtSel:0, customMode:false,
   curHost:null, curUser:null, swipeIdx:0, fFilter:'全部', selectedGift:0,
-  ledger:[], conversations:[
+  checkin:{last:'', streak:0}, daily:{date:'',watch:0,gift:0,follow:0,post:0,claimed:[]},
+  wdMethod:'wechat', wdAmt:0, mic:[null,null,null], pkA:50,
+  feeds:[], ledger:[], conversations:[
     {id:'sys',ava:'📣',name:'系统通知',last:'欢迎使用星遇 Live',time:'刚刚',unread:0,pin:true,
      msgs:[{me:0,t:'欢迎使用星遇 Live！充值、送礼为模拟流程；点底栏「开播」可体验主播端。'}]},
   ],
 };
+const today = () => new Date().toLocaleDateString('sv-SE');
 function save(){
   try{
     localStorage.setItem(KEY, JSON.stringify({
-      coins:S.coins, follows:[...S.follows], ledger:S.ledger.slice(-100),
+      user:S.user, coins:S.coins, earn:S.earn, withdrawn:S.withdrawn,
+      follows:[...S.follows], ledger:S.ledger.slice(-120), feeds:S.feeds.slice(0,60),
+      checkin:S.checkin, daily:S.daily,
       convs:S.conversations.slice(0,20).map(c=>({...c,msgs:c.msgs.slice(-20)})),
     }));
   }catch(e){}
@@ -627,12 +864,20 @@ function save(){
 function load(){
   try{
     const d=JSON.parse(localStorage.getItem(KEY)||'null'); if(!d)return;
+    if(d.user) S.user=d.user;
     if(typeof d.coins==='number') S.coins=d.coins;
+    if(typeof d.earn==='number') S.earn=d.earn;
+    if(typeof d.withdrawn==='number') S.withdrawn=d.withdrawn;
     if(Array.isArray(d.follows)) S.follows=new Set(d.follows);
     if(Array.isArray(d.ledger)) S.ledger=d.ledger;
+    if(Array.isArray(d.feeds)) S.feeds=d.feeds;
+    if(d.checkin) S.checkin=d.checkin;
+    if(d.daily) S.daily=d.daily;
     if(Array.isArray(d.convs)&&d.convs.length) S.conversations=d.convs;
   }catch(e){}
 }
+function bumpDaily(k,n){ if(S.daily.date!==today()) S.daily={date:today(),watch:0,gift:0,follow:0,post:0,claimed:[]};
+  S.daily[k]=(S.daily[k]||0)+(n||1); save(); }
 function wipeData(){
   if(!confirm('清空本地数据（余额/关注/消息/账本）？此操作不可恢复。'))return;
   localStorage.removeItem(KEY); location.reload();
@@ -649,8 +894,10 @@ function go(p){
   if(p==='msg') renderConvs();
   if(p==='me') renderMe();
   if(p==='home') renderHome();
+  if(p==='feed') renderFeeds();
 }
-function openSub(id){ $(id).classList.add('active'); if(id==='pg-ledger')renderLedger(); if(id==='pg-follows')renderFollowList(); if(id==='pg-me')renderMe(); }
+function openSub(id){ $(id).classList.add('active'); if(id==='pg-ledger')renderLedger(); if(id==='pg-follows')renderFollowList();
+  if(id==='pg-tasks')renderTasks(); if(id==='pg-wallet')renderWallet(); }
 function closeSub(id){ $(id).classList.remove('active'); }
 function openSheet(id){ $(id).classList.add('open'); }
 function closeSheet(id){ $(id).classList.remove('open'); }
@@ -702,10 +949,13 @@ function openRoom(i){
   const fb=$('followBtn'); fb.classList.toggle('done',S.follows.has(h.name));
   fb.textContent = S.follows.has(h.name)?'已关注':'+ 关注';
   $('giftPanel').classList.remove('open');
+  S.mic=[null,null,null]; S.pkA=50; renderMics(); updatePk();
   $('room').classList.add('active');
   clearInterval(roomTimer); clearInterval(enterTimer);
   roomTimer=setInterval(()=>{
     watchSec++;
+    if(watchSec%30===0){ bumpDaily('watch',1); }
+    S.pkA=Math.max(10,Math.min(90,S.pkA+Math.floor(Math.random()*11)-5)); updatePk();
     const r=Math.random();
     if(r<.55){ const [n,t]=FAKE_MSGS[Math.floor(Math.random()*FAKE_MSGS.length)]; addDm('dm',n,t); }
     if(r>.75){ onlineN+=Math.floor(Math.random()*15)+1; heatN+=Math.floor(Math.random()*60); updOnline(); }
@@ -740,7 +990,7 @@ function giftRecharge(){ $('giftPanel').classList.remove('open'); openRecharge()
 function sendGift(n){
   const g=GIFTS[S.selectedGift]; const cost=g.price*n;
   if(S.coins<cost){ toast('星币不足，请先充值'); $('giftPanel').classList.remove('open'); openRecharge(); return; }
-  S.coins-=cost; syncCoins(); save();
+  S.coins-=cost; syncCoins(); bumpDaily('gift',n); save();
   addLedger(g.icon,`送出礼物「${g.name}」×${n} 给 ${S.curHost.name}`,-cost);
   const el=document.createElement('div'); el.className='giftfx';
   el.innerHTML=`<div class="gava">🙋‍♂️</div><div class="gname">海曙 送出 ${g.name} ×${n}</div><div class="gicon">${g.icon}</div>`;
@@ -752,7 +1002,7 @@ function sendGift(n){
 function toggleFollow(){
   const n=S.curHost.name;
   if(S.follows.has(n)){ S.follows.delete(n); toast('已取消关注'); }
-  else { S.follows.add(n); toast('关注成功，开播将提醒你'); }
+  else { S.follows.add(n); bumpDaily('follow',1); toast('关注成功，开播将提醒你'); }
   const fb=$('followBtn'); fb.classList.toggle('done',S.follows.has(n));
   fb.textContent=S.follows.has(n)?'已关注':'+ 关注'; syncFollows(); save();
 }
@@ -899,8 +1149,12 @@ function openChat(name){
   renderConvs(); save();
 }
 function renderChatMsgs(){
-  $('chatBody').innerHTML=S.curUser.msgs.map(m=>`
-    <div class="bub ${m.me?'mine':''}">${m.me?'':'<div class="ava">'+S.curUser.ava+'</div>'}<div class="b">${m.t}</div></div>`).join('');
+  $('chatBody').innerHTML=S.curUser.msgs.map(m=>{
+    const inner = m.big?`<div class="b big">${m.t}</div>`
+      : m.voice?`<div class="b voice">▶️ <span style="font-size:20px;letter-spacing:1px">〰️〰️〰️</span> <span style="font-size:12px;color:var(--txt2)">${m.t}''</span></div>`
+      : `<div class="b">${m.t}</div>`;
+    return `<div class="bub ${m.me?'mine':''}">${m.me?'':'<div class="ava">'+S.curUser.ava+'</div>'}${inner}</div>`;
+  }).join('');
   $('chatBody').scrollTop=1e6;
 }
 function sendChatMsg(){
@@ -983,7 +1237,7 @@ function renderLedger(){
   $('ledgerList').innerHTML = l.length? l.map(e=>`
     <div class="lrow"><div class="li">${e.icon}</div>
       <div class="lc"><div class="lt">${e.title}</div><div class="ls">${e.time}</div></div>
-      <div class="lam ${e.amt>=0?'plus':'minus'}">${e.amt>=0?'+':''}${fmt(e.amt)}</div></div>`).join('')
+      <div class="lam ${e.amt>0?'plus':'minus'}">${e.amt===0?'—':(e.amt>0?'+':'')+fmt(e.amt)}</div></div>`).join('')
     : '<div class="empty">暂无流水，去充个值试试</div>';
 }
 
@@ -1004,6 +1258,9 @@ function unfollow(n){ S.follows.delete(n); syncFollows(); renderFollowList(); sa
 /* ============ 我的 / 等级 ============ */
 function renderMe(){
   syncCoins(); syncFollows();
+  if(S.user){ $('meAva').textContent=S.user.ava; $('meName').textContent=S.user.name; }
+  if($('meCoin')) $('meCoin').textContent=fmt(S.coins);
+  if($('meEarn')) $('meEarn').textContent=fmt(S.earn);
   const spent=S.ledger.filter(l=>l.amt<0).reduce((a,b)=>a-b.amt,0);
   const lv=8+Math.floor(spent/20000);
   const pct=Math.min(100,Math.round((spent%20000)/200));
@@ -1054,15 +1311,264 @@ function confirmEndLive(){
 }
 function claimIncome(){
   const share=Math.floor(H.income*0.5);
-  if(share>0){ S.coins+=share; addLedger('🎥',`直播收益结算（${H.title}）`,+share); }
+  if(share>0){ S.earn+=share; addLedger('🎥',`直播收益结算（${H.title}）`,+share); }
   H.live=false; H.income=0; H.gifts=0;
-  closeSheet('endSheet'); syncCoins(); save();
-  toast(share>0?`✅ 收益 🪙${fmt(share)} 已入账`:'本场没有收到礼物，下次加油');
+  closeSheet('endSheet'); syncCoins(); renderWallet(); save();
+  toast(share>0?`✅ 收益 💎${fmt(share)} 已入账，可在钱包提现`:'本场没有收到礼物，下次加油');
+}
+
+/* ============ 登录 / 注册 ============ */
+const AVA_OPTIONS=['🙋‍♂️','😎','🐱','🦊','🐼','🌙','🎧','🍀'];
+let signupAva='🙋‍♂️';
+function showLogin(){
+  $('loginStep1').style.display='block'; $('loginStep2').style.display='none';
+  $('avaPick').innerHTML=AVA_OPTIONS.map((a,i)=>`<span class="ap ${i===0?'on':''}" onclick="pickSignAva(this,'${a}')">${a}</span>`).join('');
+  $('login').classList.add('active');
+}
+function pickSignAva(el,a){ document.querySelectorAll('#avaPick .ap').forEach(e=>e.classList.remove('on')); el.classList.add('on'); signupAva=a; }
+function sendCode(){
+  const p=$('phoneInput').value.trim();
+  if(!/^\d{11}$/.test(p)){ toast('请输入 11 位手机号'); return; }
+  let s=60; const b=$('codeBtn'); b.disabled=true;
+  b.textContent=s+'s';
+  const t=setInterval(()=>{ s--; b.textContent=s+'s'; if(s<=0){ clearInterval(t); b.disabled=false; b.textContent='重新获取'; } },1000);
+  toast('验证码已发送（演示：任意 4 位）');
+}
+function doPhoneLogin(){
+  const p=$('phoneInput').value.trim(), c=$('codeInput').value.trim();
+  if(!/^\d{11}$/.test(p)){ toast('请输入正确的手机号'); return; }
+  if(c.length!==4){ toast('请输入 4 位验证码'); return; }
+  $('loginStep1').style.display='none'; $('loginStep2').style.display='block';
+}
+function doWechatLogin(){ S.user={ava:'🙋‍♂️',name:'微信用户',phone:'',from:'wechat'};
+  $('loginStep1').style.display='none'; $('loginStep2').style.display='block'; toast('微信授权成功'); }
+function finishSignup(){
+  const nick=$('nickInput').value.trim()||'新用户';
+  S.user={ava:signupAva, name:nick, phone:$('phoneInput').value.trim()||'', from:'phone'};
+  save(); $('login').classList.remove('active'); enterApp();
+}
+function enterApp(){ toast(`欢迎你，${S.user.name}！`); renderMe(); renderHome(); }
+function logout(){ if(confirm('退出登录？本地数据保留。')){ S.user=null; save(); $('login').classList.add('active');
+  $('loginStep1').style.display='block'; $('loginStep2').style.display='none'; } }
+
+/* ============ 广场（动态） ============ */
+const INIT_FEEDS=[
+  {id:1,ava:'💃',name:'苏晚晚',time:'2 分钟前',text:'今晚 8 点准时开播，来听我唱新歌～',imgs:['🎤','🌙'], likes:126,liked:false,
+   cmts:['期待！','沙发已占']},
+  {id:2,ava:'👩‍🎨',name:'林小满',time:'15 分钟前',text:'画了一下午，终于把这只猫画完了，送给直播间的朋友们 🐱',imgs:['🐱','🎨','☕'], likes:88,liked:false,cmts:['好可爱的猫']},
+  {id:3,ava:'🎮',name:'老K',time:'1 小时前',text:'五连胜，今晚继续冲榜！谁来组队',imgs:['🎮'], likes:204,liked:false,cmts:['我我我','带带我']},
+];
+let postImgs=[];
+function renderFeeds(){
+  const list=S.feeds.length?S.feeds:INIT_FEEDS;
+  $('feedList').innerHTML=list.map(f=>`
+    <div class="feed">
+      <div class="fhead"><div class="ava" onclick="openProfile('${f.name}')">${f.ava}</div>
+        <div><div class="fname">${f.name}</div><div class="ftime">${f.time}</div></div></div>
+      <div class="ftext">${f.text}</div>
+      ${f.imgs&&f.imgs.length?`<div class="fimgs">${f.imgs.map(i=>`<div class="fimg">${i}</div>`).join('')}</div>`:''}
+      <div class="fops">
+        <span class="${f.liked?'on':''}" onclick="likeFeed(${f.id})">${f.liked?'❤️':'🤍'} ${f.likes}</span>
+        <span onclick="commentFeed(${f.id})">💬 ${f.cmts.length}</span>
+        <span onclick="doShare('转发动态')">↗️ 转发</span>
+      </div>
+      ${f.cmts.length?`<div class="cmt">${f.cmts.map(c=>'· '+c).join('<br>')}</div>`:''}
+    </div>`).join('');
+}
+function likeFeed(id){
+  const list=S.feeds.length?S.feeds:INIT_FEEDS;
+  const f=list.find(x=>x.id===id); if(!f)return;
+  f.liked=!f.liked; f.likes+=f.liked?1:-1; renderFeeds();
+}
+function commentFeed(id){
+  const t=prompt('写一条评论'); if(!t)return;
+  const list=S.feeds.length?S.feeds:INIT_FEEDS;
+  const f=list.find(x=>x.id===id); if(!f)return;
+  f.cmts.push(t); renderFeeds(); toast('评论已发布');
+}
+function openPostSheet(){ postImgs=[]; $('postText').value='';
+  $('postImgRow').innerHTML=['🌅','🍜','🐱','🎧','🌙','✈️','☕','🎮'].map(e=>`<span onclick="pickPostImg('${e}')">${e}</span>`).join('');
+  openSheet('postSheet'); }
+function pickPostImg(e){ if(postImgs.length>=3){toast('最多 3 张');return;} postImgs.push(e); toast('已添加配图 '+e); }
+function doPost(){
+  const t=$('postText').value.trim(); if(!t){ toast('说点什么吧'); return; }
+  const f={id:Date.now(), ava:S.user?S.user.ava:'🙋‍♂️', name:S.user?S.user.name:'我', time:'刚刚', text:t,
+           imgs:[...postImgs], likes:0, liked:false, cmts:[]};
+  S.feeds.unshift(f); save(); closeSheet('postSheet'); renderFeeds();
+  bumpDaily('post',1); toast('动态已发布'); go('feed');
+}
+
+/* ============ 搜索 ============ */
+function openSearch(){ openSub('pg-search'); $('searchInput').value=''; renderSearch(''); }
+function renderSearch(q){
+  q=(q||'').trim();
+  const hs=HOSTS.filter(h=>!q||h.name.includes(q)||h.cat.includes(q)||h.city.includes(q));
+  const us=USERS.filter(u=>!q||u.name.includes(q)||u.city.includes(q)||u.tags.some(t=>t.includes(q)));
+  let html='';
+  if(!q){ html=`<div style="padding:12px 16px;font-size:12px;color:var(--txt2)">热门搜索</div>`+
+    `<div class="fcats" style="padding:0 16px 10px;justify-content:flex-start">${['苏晚晚','老K','唱歌','上海','Mia'].map(k=>`<span class="cat" onclick="document.getElementById('searchInput').value='${k}';renderSearch('${k}')">${k}</span>`).join('')}</div>`; }
+  html+=`<div style="padding:8px 16px;font-size:12px;color:var(--txt2)">主播 ${hs.length} · 用户 ${us.length}</div>`;
+  html+=hs.map(h=>`<div class="lrow" onclick="openRoom(${HOSTS.indexOf(h)})">
+      <div class="ava" style="width:40px;height:40px;font-size:20px">${h.ava}</div>
+      <div class="lc"><div class="lt">${h.name} <span style="font-size:10px;color:var(--accent)">●直播中</span></div>
+      <div class="ls">#${h.cat} · 📍${h.city} · 👁${h.views}</div></div></div>`).join('');
+  html+=us.map(u=>`<div class="lrow" onclick="openProfile('${u.name}')">
+      <div class="ava" style="width:40px;height:40px;font-size:20px">${u.ava}</div>
+      <div class="lc"><div class="lt">${u.name} · ${u.age}</div><div class="ls">${u.city}</div></div>
+      <div class="wbtn" style="flex:0 0 60px;padding:7px 0" onclick="event.stopPropagation();openChat('${u.name}')">私聊</div></div>`).join('');
+  if(!hs.length&&!us.length) html+='<div class="empty">没有找到「'+q+'」</div>';
+  $('searchList').innerHTML=html;
+}
+
+/* ============ 他人主页 ============ */
+let profTarget=null;
+function openProfile(name){
+  const h=HOSTS.find(x=>x.name===name); const u=USERS.find(x=>x.name===name);
+  if(!h&&!u){ toast('用户不存在'); return; }
+  profTarget={name, ava:h?h.ava:u.ava, isHost:!!h, sub:h?`${h.cat}主播 · 📍${h.city}`:u.city,
+              tags:h?[h.cat,'直播中']:u.tags, bio:h?`${h.city}的${h.cat}主播，每晚准时开播`:u.bio};
+  openSub('pg-profile'); renderProfile();
+}
+function renderProfile(){
+  const p=profTarget; const followed=S.follows.has(p.name);
+  $('profileBody').innerHTML=`
+    <div class="prof-head"><div class="pa">${p.ava}</div>
+      <div style="font-size:18px;font-weight:700">${p.name}</div>
+      <div style="font-size:12px;color:var(--txt2);margin-top:4px">ID:${Math.abs(p.name.length*7919)} · ${p.sub}</div>
+      <div style="font-size:13px;margin-top:10px;color:var(--txt)">${p.bio}</div>
+      <div class="tags" style="justify-content:center;margin-top:10px">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>
+    <div class="prof-stat"><div><b>${(p.name.length*137)%9000+500}</b><span>粉丝</span></div>
+      <div><b>${(p.name.length*37)%300+20}</b><span>关注</span></div>
+      <div><b>${(p.name.length*53)%5000+800}</b><span>获赞</span></div></div>
+    <div class="prof-ops">
+      <div class="po ${followed?'':''}" id="profFollow" onclick="profFollow()">${followed?'已关注':'❤️ 关注'}</div>
+      <div class="po" onclick="openChat('${p.name}')">💬 私聊</div>
+      <div class="po primary" onclick="profGift()">🎁 送礼</div>
+    </div>
+    <div style="padding:0 16px 8px;font-size:13px;font-weight:700">📷 相册</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 16px 16px">
+      ${['🌅','🍜','🐱','🎧','🌙','✈️'].map(i=>`<div class="fimg" style="height:90px">${i}</div>`).join('')}
+    </div>`;
+}
+function profFollow(){
+  const p=profTarget;
+  if(S.follows.has(p.name)){ S.follows.delete(p.name); toast('已取消关注'); }
+  else { S.follows.add(p.name); bumpDaily('follow',1); toast('关注成功'); }
+  syncFollows(); save(); renderProfile();
+}
+function profGift(){
+  save(); closeSub('pg-profile');
+  const h=HOSTS.findIndex(x=>x.name===profTarget.name);
+  if(h>=0) openRoom(h); else { openRecharge(); toast('给用户送礼：正式版支持私聊红包'); }
+}
+
+/* ============ 签到 / 每日任务 ============ */
+const CK_REWARD=[100,200,300,400,500,600,800];
+const TASKS=[
+  {key:'watch',icon:'📺',name:'观看直播 10 分钟',goal:10,reward:200,unit:'分钟'},
+  {key:'gift',icon:'🎁',name:'送出 1 个礼物',goal:1,reward:300,unit:'个'},
+  {key:'follow',icon:'❤️',name:'关注 1 位主播',goal:1,reward:200,unit:'位'},
+  {key:'post',icon:'✍️',name:'发布 1 条动态',goal:1,reward:400,unit:'条'},
+];
+function renderTasks(){
+  if(S.daily.date!==today()) S.daily={date:today(),watch:0,gift:0,follow:0,post:0,claimed:[]};
+  const streak=S.checkin.streak||0; const doneToday=S.checkin.last===today();
+  $('checkinRow').innerHTML=CK_REWARD.map((r,i)=>`
+    <div class="ck ${i<streak?'done':''} ${i===streak&&!doneToday?'today':''}">
+      <div class="cd">第${i+1}天</div><div class="cc">🪙${r}</div><div class="cd">${i<streak?'已领':''}</div></div>`).join('');
+  const btn=$('checkinBtn');
+  btn.textContent = doneToday?'今日已签到':`今日签到 · 领 🪙${CK_REWARD[Math.min(streak,6)]}`;
+  btn.disabled = doneToday; btn.style.opacity = doneToday?'.55':'1';
+  $('taskList').innerHTML=TASKS.map(t=>{
+    const cur=S.daily[t.key]||0; const done=S.daily.claimed.includes(t.key);
+    const pct=Math.min(100,Math.round(cur/t.goal*100));
+    return `<div class="task-row"><div style="font-size:22px">${t.icon}</div>
+      <div class="tp"><div style="font-size:14px;font-weight:600">${t.name}</div>
+        <div style="font-size:11px;color:var(--txt2);margin-top:3px">奖励 🪙${t.reward} · 进度 ${cur}/${t.goal}${t.unit}</div>
+        <div class="tprog"><i style="width:${pct}%"></i></div></div>
+      <div class="tbtn ${cur>=t.goal&&!done?'able':''}" onclick="claimTask('${t.key}')">${done?'已领':'领取'}</div></div>`;
+  }).join('');
+}
+function doCheckin(){
+  if(S.checkin.last===today()){ toast('今天已签到'); return; }
+  const streak=(S.checkin.streak||0)%7;
+  const reward=CK_REWARD[streak];
+  S.checkin={last:today(), streak:streak+1};
+  S.coins+=reward; addLedger('📅',`连续签到第 ${streak+1} 天`,+reward);
+  syncCoins(); save(); renderTasks(); toast(`签到成功，领 🪙${reward}`);
+}
+function claimTask(key){
+  if(S.daily.claimed.includes(key)){ toast('该奖励已领取'); return; }
+  const t=TASKS.find(x=>x.key===key);
+  if((S.daily[key]||0)<t.goal){ toast(`进度 ${S.daily[key]||0}/${t.goal}，还没完成`); return; }
+  S.daily.claimed.push(key); S.coins+=t.reward;
+  addLedger(t.icon,`每日任务：${t.name}`,+t.reward);
+  syncCoins(); save(); renderTasks(); toast(`任务奖励 🪙${t.reward} 已到账`);
+}
+
+/* ============ 钱包 / 提现 ============ */
+const WD_OPTS=[1000,5000,10000,30000];
+function renderWallet(){
+  $('wCoin').textContent=fmt(S.coins); $('wEarn').textContent=fmt(S.earn); $('wWithdrawn').textContent=fmt(S.withdrawn);
+}
+function openWithdraw(){
+  S.wdAmt=WD_OPTS[0]; pickWd(S.wdMethod);
+  $('wdAvail').textContent=fmt(S.earn);
+  $('wdGrid').innerHTML=WD_OPTS.map((v,i)=>`
+    <div class="amt ${i===0?'sel':''}" data-w="${i}" onclick="pickWdAmt(${i})">
+      <div class="c">💎${fmt(v)}</div><div class="p">≈ ¥${(v/100).toFixed(2)}</div></div>`).join('');
+  updWdBtn(); openSheet('withdrawSheet');
+}
+function pickWdAmt(i){ S.wdAmt=WD_OPTS[i];
+  document.querySelectorAll('#wdGrid .amt').forEach(e=>e.classList.toggle('sel', e.dataset.w==String(i))); updWdBtn(); }
+function pickWd(m){ S.wdMethod=m;
+  $('wdWechat').classList.toggle('sel',m==='wechat'); $('wdAlipay').classList.toggle('sel',m==='alipay'); }
+function updWdBtn(){ $('wdBtn').textContent=`确认提现 💎${fmt(S.wdAmt)}（≈ ¥${(S.wdAmt/100).toFixed(2)}）`; }
+function doWithdraw(){
+  if(S.earn<S.wdAmt){ toast(`收益不足，当前 ${fmt(S.earn)} 💎`); return; }
+  if(S.wdAmt<1000){ toast('满 1000💎 起提'); return; }
+  const ch=S.wdMethod==='wechat'?'微信零钱':'支付宝';
+  S.earn-=S.wdAmt; S.withdrawn+=S.wdAmt;
+  addLedger('🏦',`提现到${ch}（≈¥${(S.wdAmt/100).toFixed(2)}）`,0);
+  closeSheet('withdrawSheet'); renderWallet(); save(); toast(`提现申请已提交，T+1 到账 ${ch}`);
+}
+
+/* ============ 直播间：PK / 麦位 ============ */
+function renderMics(){
+  $('micSlots').innerHTML=S.mic.map((m,i)=>`<div class="mic ${m?'on':''}" onclick="toggleMic(${i})">${m||'＋'}</div>`).join('');
+}
+function toggleMic(i){
+  if(S.mic[i]===null){
+    S.mic[i]=S.user?S.user.ava:'🙋‍♂️';
+    addDm('sys',null,`你已上麦（${i===0?'主麦':'麦位'+(i+1)}），正式版建立 TRTC 连麦通道`);
+    toast('已申请上麦，连麦中…');
+  } else if(S.mic[i]===(S.user?S.user.ava:'🙋‍♂️')){
+    S.mic[i]=null; addDm('sys',null,'你已下麦'); toast('已下麦');
+  } else toast('该麦位已被占用');
+  renderMics();
+}
+function updatePk(){
+  const a=S.pkA, b=100-a;
+  $('pkA').style.width=a+'%'; $('pkB').style.width=b+'%';
+}
+
+/* ============ 私聊：表情包 / 语音 ============ */
+const PACK=['😍','😂','🥰','😭','🤯','👏','🌹','🎉'];
+function openPack(){ $('packRow').innerHTML=PACK.map(e=>`<span onclick="sendPack('${e}')">${e}</span>`).join(''); openSheet('packSheet'); }
+function sendPack(e){ closeSheet('packSheet'); if(!S.curUser)return;
+  S.curUser.msgs.push({me:1,t:e,big:1}); renderChatMsgs(); S.curUser.last='[表情]'; S.curUser.time=now(); save(); }
+function sendVoice(){ if(!S.curUser)return;
+  const sec=3+Math.floor(Math.random()*5);
+  S.curUser.msgs.push({me:1,t:sec,voice:1}); renderChatMsgs();
+  S.curUser.last='[语音]'; S.curUser.time=now(); save();
+  setTimeout(()=>{ S.curUser.msgs.push({me:0,t:'收到啦~',}); renderChatMsgs(); S.curUser.last='收到啦~'; save(); },1500);
 }
 
 /* ============ 初始化 ============ */
 load();
-renderHome(); renderFCats(); renderSwipe(); renderConvs(); syncCoins(); syncFollows(); syncUnread(); renderMe();
+renderHome(); renderFCats(); renderSwipe(); renderConvs(); renderFeeds(); syncCoins(); syncFollows(); syncUnread(); renderMe();
+if(!S.user) showLogin();
 </script>
 </body>
 </html>
