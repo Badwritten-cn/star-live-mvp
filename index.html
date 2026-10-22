@@ -807,6 +807,14 @@ const HOSTS = [
   {ava:'🎮',name:'老K',city:'杭州',cat:'游戏',views:'5.2万',grad:'linear-gradient(160deg,#0f3d2d,#0a1a30)'},
   {ava:'🎸',name:'南城旧梦',city:'北京',cat:'唱歌',views:'8,100',grad:'linear-gradient(160deg,#3d0f2d,#1a0a2d)'},
   {ava:'📚',name:'睡前读物',city:'武汉',cat:'聊天',views:'3,400',grad:'linear-gradient(160deg,#2d2d0f,#101a30)'},
+  {ava:'🧘',name:'瑜伽Nina',city:'深圳',cat:'颜值',views:'1.2万',grad:'linear-gradient(160deg,#1a3d2d,#0a2a1a)'},
+  {ava:'🎹',name:'钢琴小林',city:'南京',cat:'新秀',views:'6,700',grad:'linear-gradient(160deg,#2a1a3d,#101a30)'},
+  {ava:'⛰️',name:'户外阿峰',city:'重庆',cat:'户外',views:'3.9万',grad:'linear-gradient(160deg,#1a2d3d,#0a1a2d)'},
+  {ava:'🐱',name:'猫咖日记',city:'苏州',cat:'美食',views:'7,800',grad:'linear-gradient(160deg,#3d2a1a,#2a1a10)'},
+  {ava:'🎧',name:'深夜电台',city:'西安',cat:'聊天',views:'2,900',grad:'linear-gradient(160deg,#1a1a3d,#0d0d20)'},
+  {ava:'🎨',name:'画画的小鹿',city:'长沙',cat:'新秀',views:'1,600',grad:'linear-gradient(160deg,#3d1a2d,#200f1a)'},
+  {ava:'🏀',name:'球场老赵',city:'天津',cat:'户外',views:'4,400',grad:'linear-gradient(160deg,#2d3d0f,#1a200a)'},
+  {ava:'👗',name:'穿搭Cici',city:'上海',cat:'颜值',views:'1.5万',grad:'linear-gradient(160deg,#3d0f1a,#200a15)'},
 ];
 const USERS = [
   {ava:'👩‍🎨',name:'林小满',age:24,city:'上海 · 插画师',bio:'周末 loves livehouse 和猫',tags:['猫奴','探店','健身']},
@@ -814,10 +822,18 @@ const USERS = [
   {ava:'🧕',name:'南希',age:23,city:'杭州 · 舞蹈老师',bio:'想找一个人一起看日出',tags:['舞蹈','瑜伽','电影']},
   {ava:'👩‍💻',name:'安安',age:27,city:'北京 · 程序员',bio:'写代码的间隙也写诗',tags:['科技','脱口秀','跑步'],matchBack:true},
   {ava:'👧',name:'桃子',age:22,city:'成都 · 学生',bio:'奶茶测评博主，甜度全糖',tags:['美食','音乐','拍照']},
+  {ava:'🧑‍🍳',name:'老陈',age:29,city:'广州 · 私厨老板',bio:'做菜是我表达喜欢的方式',tags:['美食','露营','威士忌']},
+  {ava:'👩‍⚕️',name:'白露',age:26,city:'武汉 · 医生',bio:'夜班结束爱看深夜电台',tags:['夜猫','读书','瑜伽'],matchBack:true},
+  {ava:'🧑‍🎤',name:'阿Ken',age:25,city:'厦门 · 乐队主唱',bio:'排练室和海边来回切换',tags:['音乐','滑板','啤酒']},
+  {ava:'👩‍🏫',name:'小鹿老师',age:28,city:'南京 · 小学老师',bio:'想把温柔分给懂的人',tags:['电影','手工','爬山']},
+  {ava:'🧑‍🚀',name:'Leo',age:30,city:'北京 · 创业者',bio:'不卷了，来找点人间烟火',tags:['创业','摄影','潜水']},
+  {ava:'👩‍🌾',name:'阿禾',age:24,city:'大理 · 民宿主',bio:'院子里的花开了，等你来',tags:['旅行','植物','慢生活'],matchBack:true},
+  {ava:'🧑‍🔧',name:'大熊',age:27,city:'沈阳 · 工程师',bio:'话不多，但很靠谱',tags:['机车','健身','科幻']},
 ];
 const GIFTS = [
   {icon:'🌹',name:'玫瑰',price:1},{icon:'☕',name:'奶茶',price:10},{icon:'🍭',name:'棒棒糖',price:30},
   {icon:'🎀',name:'蝴蝶结',price:66},{icon:'🚀',name:'火箭',price:520},{icon:'🏰',name:'城堡',price:1888},
+  {icon:'🏎️',name:'跑车',price:5200},{icon:'🎡',name:'嘉年华',price:9999},
 ];
 const AMOUNTS = [
   {coin:3000,price:30,bonus:''},{coin:5000,price:50,bonus:''},{coin:10000,price:100,bonus:'送 500'},
@@ -827,16 +843,24 @@ const FAKE_MSGS = [
   ['小明','主播唱一首《晚风》吧！'],['琪琪','刚来，什么水平？'],['路人甲','这也太好看了吧 😍'],
   ['大熊','礼物走一波 🚀'],['Lily','关注了！每天都播吗'],['阿伟','前排围观'],['糖糖','把 babe 拉一个'],
   ['老王','氛围组已就位'],['小鹿','666666'],['深夜食堂','聊会天呗~'],['阿飞','氛围感拉满'],
+  ['芋圆','这个滤镜好好看，求参数'],['大橘','刚下班，来续命'],['小满','主播声音好温柔'],
+  ['阿峰','榜一冲不动了，交给你们'],['Cici','今天的穿搭绝了'],['老李','随手一个小心心 ❤️'],
+  ['拾光','默默看了半小时，不敢说话'],['柚柚','有没有人一起连麦'],['阿泽','特效礼物太帅了吧'],
+  ['一颗糖','主播能不能讲讲今天的歌'],['大风','网络卡了一下，重进'],['Nana','打卡第 30 天'],
+  ['芒果','笑得我手机差点掉了'],['小七','主播回关一下嘛'],['山鬼','这波操作教科书级别'],
 ];
-const FAKE_NAMES = ['小七','芒果','柚子','阿泽','Nana','大风','拾光','一颗糖'];
-const ENTER_NAMES = ['小七','Nana','拾光','芒果','大风','一颗糖','柚子','阿泽'];
+const FAKE_NAMES = ['小七','芒果','柚子','阿泽','Nana','大风','拾光','一颗糖','芋圆','大橘','山鬼','阿峰','老李','柚柚'];
+const ENTER_NAMES = ['小七','Nana','拾光','芒果','大风','一颗糖','柚子','阿泽','芋圆','大橘','山鬼','老李','Cici',' Leo'];
 const HOME_CATS = ['热门','颜值','唱歌','舞蹈','游戏','美食','新秀'];
 const START_CATS = ['聊天','唱歌','舞蹈','美食','游戏','户外'];
 const EMOJIS = ['😄','😂','❤️','🎁','👍','🌹','😍','🤔'];
 const RANKERS = [
   {ava:'🐯',name:'虎哥不吃鱼',amt:52000},{ava:'🌸',name:'一朵栀子',amt:18888},{ava:'👑',name:'King',amt:6666},
+  {ava:'🍋',name:'柠檬不酸',amt:3200},{ava:'🐳',name:'深海鲸落',amt:1980},{ava:'🌟',name:'追光少年',amt:1200},
 ];
-const REPLY_POOL = ['嗯嗯，你说 👀','哈哈哈我也是！','在忙，晚点聊~','真的假的？','改天一起呀 😊','送你个小礼物回礼 🌹','你也在看直播吗','刚看到你的主页，品味不错'];
+const REPLY_POOL = ['嗯嗯，你说 👀','哈哈哈我也是！','在忙，晚点聊~','真的假的？','改天一起呀 😊',
+  '送你个小礼物回礼 🌹','你也在看直播吗','刚看到你的主页，品味不错','我在直播间等你哦','哈哈被你发现了',
+  '这个话题我能聊一晚上','那就这么定了 🎉','你声音听起来很温柔','下次一起连麦吧'];
 
 /* ============ 持久化 ============ */
 const KEY = 'starlive_v2';
@@ -1354,9 +1378,14 @@ function logout(){ if(confirm('退出登录？本地数据保留。')){ S.user=n
 /* ============ 广场（动态） ============ */
 const INIT_FEEDS=[
   {id:1,ava:'💃',name:'苏晚晚',time:'2 分钟前',text:'今晚 8 点准时开播，来听我唱新歌～',imgs:['🎤','🌙'], likes:126,liked:false,
-   cmts:['期待！','沙发已占']},
-  {id:2,ava:'👩‍🎨',name:'林小满',time:'15 分钟前',text:'画了一下午，终于把这只猫画完了，送给直播间的朋友们 🐱',imgs:['🐱','🎨','☕'], likes:88,liked:false,cmts:['好可爱的猫']},
-  {id:3,ava:'🎮',name:'老K',time:'1 小时前',text:'五连胜，今晚继续冲榜！谁来组队',imgs:['🎮'], likes:204,liked:false,cmts:['我我我','带带我']},
+   cmts:['期待！','沙发已占','已定闹钟']},
+  {id:2,ava:'👩‍🎨',name:'林小满',time:'15 分钟前',text:'画了一下午，终于把这只猫画完了，送给直播间的朋友们 🐱',imgs:['🐱','🎨','☕'], likes:88,liked:false,cmts:['好可爱的猫','求原图当壁纸']},
+  {id:3,ava:'🎮',name:'老K',time:'1 小时前',text:'五连胜，今晚继续冲榜！谁来组队',imgs:['🎮'], likes:204,liked:false,cmts:['我我我','带带我','几点开']},
+  {id:4,ava:'⛰️',name:'户外阿峰',time:'2 小时前',text:'海拔 3200 米，风大到说不出话，给你们看看云海',imgs:['⛰️','🌤️','🏕️'], likes:512,liked:false,cmts:['太美了','注意安全']},
+  {id:5,ava:'🍳',name:'厨房小美',time:'3 小时前',text:'今日菜谱：番茄牛腩 + 手打柠檬茶，直播间做给你们看',imgs:['🍜','🍋'], likes:167,liked:false,cmts:['馋哭了','求配方']},
+  {id:6,ava:'🎧',name:'深夜电台',time:'5 小时前',text:'今晚的话题：你最后一次心动是什么时候？',imgs:['🌙'], likes:389,liked:false,cmts:['太催泪了','想投稿']},
+  {id:7,ava:'🧘',name:'瑜伽Nina',time:'昨天',text:'办公室三件套拉伸，久坐的姐妹跟我做',imgs:['🧘','🪑'], likes:243,liked:false,cmts:['跟着做完了，舒服']},
+  {id:8,ava:'🐱',name:'猫咖日记',time:'昨天',text:'新来的三花会自己开抽屉，猫咖今日营业中',imgs:['🐱','🐾','☕'], likes:976,liked:false,cmts:['周末就去','这只猫成精了']},
 ];
 let postImgs=[];
 function renderFeeds(){
