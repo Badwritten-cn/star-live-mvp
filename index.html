@@ -14,8 +14,7 @@
   body{background:#05060a;font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;color:var(--txt);
     display:flex;justify-content:center;min-height:100vh}
   .phone{width:100%;max-width:414px;background:var(--bg);min-height:100vh;position:relative;display:flex;flex-direction:column}
-  /* ---------- 通用 ---------- */
-  .page{flex:1;display:none;flex-direction:column;padding-bottom:64px;overflow-y:auto}
+  .page{flex:1;display:none;flex-direction:column;padding-bottom:70px;overflow-y:auto}
   .page.active{display:flex}
   .topbar{padding:14px 16px 10px;display:flex;align-items:center;justify-content:space-between}
   .logo{font-size:20px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));
@@ -24,17 +23,19 @@
     border-radius:20px;padding:5px 12px;font-size:13px;font-weight:600;cursor:pointer}
   .coinchip b{color:var(--gold)}
   /* ---------- tabbar ---------- */
-  .tabbar{position:fixed;bottom:0;width:100%;max-width:414px;height:60px;background:var(--panel);
+  .tabbar{position:fixed;bottom:0;width:100%;max-width:414px;height:62px;background:var(--panel);
     border-top:1px solid var(--line);display:flex;z-index:50}
   .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-    color:var(--txt2);font-size:10px;cursor:pointer}
+    color:var(--txt2);font-size:10px;cursor:pointer;position:relative}
   .tab .ico{font-size:22px;line-height:1}
   .tab.on{color:var(--accent)}
   .tab-live-btn{width:46px;height:30px;border-radius:15px;background:linear-gradient(90deg,var(--accent),var(--accent2));
     display:flex;align-items:center;justify-content:center;font-size:16px;margin-top:-14px;box-shadow:0 4px 14px rgba(255,77,109,.4)}
+  .tab .badge{position:absolute;top:6px;right:22%;min-width:15px;height:15px;background:var(--accent);border-radius:8px;
+    font-size:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;padding:0 3px}
   /* ---------- 首页 ---------- */
   .cats{display:flex;gap:8px;padding:4px 16px 12px;overflow-x:auto}
-  .cat{padding:6px 14px;border-radius:16px;background:var(--panel2);font-size:12px;color:var(--txt2);white-space:nowrap}
+  .cat{padding:6px 14px;border-radius:16px;background:var(--panel2);font-size:12px;color:var(--txt2);white-space:nowrap;cursor:pointer}
   .cat.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px}
   .card{border-radius:12px;overflow:hidden;background:var(--panel2);cursor:pointer;position:relative}
@@ -44,30 +45,55 @@
   .meta{padding:8px 10px;font-size:13px;font-weight:600}
   .meta .sub{font-size:11px;color:var(--txt2);font-weight:400;margin-top:2px;display:flex;justify-content:space-between}
   .meta .city{color:var(--accent2)}
+  .sec-title{padding:16px 16px 10px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+  .sec-title span{font-size:11px;color:var(--txt2);font-weight:400}
+  .follow-strip{display:flex;gap:12px;padding:0 16px 8px;overflow-x:auto}
+  .fitem{text-align:center;flex-shrink:0;cursor:pointer}
+  .fitem .fa{width:52px;height:52px;border-radius:50%;background:var(--panel2);border:2px solid var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:26px}
+  .fitem p{font-size:10px;color:var(--txt2);margin-top:4px;max-width:52px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   /* ---------- 交友 ---------- */
   .match-hero{padding:16px;text-align:center}
   .match-hero h2{font-size:18px;margin-bottom:4px}
   .match-hero p{font-size:12px;color:var(--txt2)}
-  .swipe-area{position:relative;height:360px;margin:12px 24px}
+  .fcats{display:flex;gap:8px;padding:0 16px 10px;justify-content:center;flex-wrap:wrap}
+  .swipe-area{position:relative;height:360px;margin:6px 24px}
   .ucard{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:var(--panel2);
     border:1px solid var(--line);display:flex;flex-direction:column;cursor:pointer;transition:transform .3s,opacity .3s}
   .ucard .photo{flex:1;display:flex;align-items:center;justify-content:center;font-size:80px}
   .ucard .info{padding:14px}
   .ucard .tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
   .tag{font-size:10px;padding:3px 10px;border-radius:10px;background:var(--panel);color:var(--txt2);border:1px solid var(--line)}
-  .swipe-actions{display:flex;justify-content:center;gap:40px;padding:16px}
-  .sbtn{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);
-    font-size:24px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .sbtn.like{border-color:var(--accent);color:var(--accent)}
   .ucard.gone{transform:translateX(-120%) rotate(-20deg);opacity:0}
+  .ucard.gone-right{transform:translateX(120%) rotate(20deg);opacity:0}
+  .swipe-actions{display:flex;justify-content:center;gap:28px;padding:14px}
+  .sbtn{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);
+    font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .sbtn.like{border-color:var(--accent);color:var(--accent);font-size:24px}
+  .sbtn.super{border-color:var(--accent2);color:var(--accent2)}
   /* ---------- 消息 ---------- */
-  .conv{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);cursor:pointer;align-items:center}
+  .conv{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);cursor:pointer;align-items:center;background:var(--bg)}
+  .conv.pinned{background:rgba(124,92,255,.06)}
   .ava{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;background:var(--panel2);border:1px solid var(--line);flex-shrink:0}
   .conv .c{flex:1;min-width:0}
-  .conv .name{font-size:14px;font-weight:600;display:flex;justify-content:space-between}
+  .conv .name{font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
   .conv .name time{font-size:10px;color:var(--txt2);font-weight:400}
   .conv .last{font-size:12px;color:var(--txt2);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .conv .dot{width:16px;height:16px;background:var(--accent);border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .conv .dot{min-width:16px;height:16px;background:var(--accent);border-radius:8px;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0 3px;color:#fff}
+  .conv .more{color:var(--txt2);font-size:16px;padding:4px 6px;flex-shrink:0}
+  /* ---------- 子页面 ---------- */
+  .subpage{position:fixed;inset:0;background:var(--bg);z-index:120;display:none;flex-direction:column;max-width:414px;margin:0 auto}
+  .subpage.active{display:flex}
+  .sub-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
+  .back{font-size:22px;cursor:pointer;color:var(--txt)}
+  .sub-body{flex:1;overflow-y:auto;padding-bottom:20px}
+  .lrow{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+  .lrow .li{font-size:22px;width:36px;height:36px;background:var(--panel2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .lrow .lc{flex:1;min-width:0}
+  .lrow .lt{font-size:14px;font-weight:600}
+  .lrow .ls{font-size:11px;color:var(--txt2);margin-top:2px}
+  .lrow .lam{font-weight:800;font-size:15px}
+  .lrow .plus{color:var(--green)} .lrow .minus{color:var(--txt2)}
   /* ---------- 我的 ---------- */
   .me-head{padding:24px 16px;display:flex;gap:14px;align-items:center}
   .me-ava{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));
@@ -78,11 +104,18 @@
   .wrow{display:flex;gap:10px;margin-top:14px}
   .wbtn{flex:1;text-align:center;padding:9px 0;border-radius:10px;background:rgba(255,197,61,.12);color:var(--gold);font-size:13px;font-weight:600;cursor:pointer}
   .wbtn.primary{background:linear-gradient(90deg,var(--accent),#ff7b54);color:#fff}
+  .lvbar{margin:16px;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--panel)}
+  .lvbar .prog{height:8px;background:var(--panel2);border-radius:4px;margin-top:10px;overflow:hidden}
+  .lvbar .prog i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#ff7b54);border-radius:4px}
   .menulist{margin:16px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
-  .mrow{padding:15px 16px;display:flex;align-items:center;gap:12px;font-size:14px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .mrow{padding:15px 16px;display:flex;align-items:center;gap:12px;font-size:14px;border-bottom:1px solid var(--line);background:var(--panel);cursor:pointer}
   .mrow:last-child{border-bottom:none}
-  .mrow .r{margin-left:auto;color:var(--txt2);font-size:12px}
-  /* ---------- 直播间 ---------- */
+  .mrow .r{margin-left:auto;color:var(--txt2);font-size:12px;display:flex;align-items:center;gap:6px}
+  .switch{width:42px;height:24px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);position:relative;cursor:pointer}
+  .switch i{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:var(--txt2);transition:.2s}
+  .switch.on{background:rgba(46,213,115,.2);border-color:var(--green)}
+  .switch.on i{left:20px;background:var(--green)}
+  /* ---------- 直播间（观众） ---------- */
   #room{position:fixed;inset:0;background:#000;z-index:100;display:none;flex-direction:column}
   #room.active{display:flex}
   .video{flex:1;position:relative;overflow:hidden;background:linear-gradient(160deg,#2b1a3d,#0f1030 60%,#101425)}
@@ -91,37 +124,39 @@
   .video .cam{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
   .video .cam .face{font-size:110px;animation:bob 3s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-  .video .cam .hint{font-size:12px;color:rgba(255,255,255,.45)}
-  .room-top{position:absolute;top:14px;left:12px;right:12px;display:flex;align-items:center;gap:8px;z-index:5}
+  .video .cam .hint{font-size:12px;color:rgba(255,255,255,.45);padding:0 30px;text-align:center}
+  .room-top{position:absolute;top:14px;left:12px;right:12px;display:flex;align-items:flex-start;gap:8px;z-index:5}
   .hostcard{display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.35);backdrop-filter:blur(8px);border-radius:20px;padding:5px 12px 5px 6px}
   .hostcard .ava{width:32px;height:32px;font-size:17px}
   .hostcard .hn{font-size:12px;font-weight:600;color:#fff}
   .hostcard .hf{font-size:10px;color:rgba(255,255,255,.6)}
-  .followbtn{background:linear-gradient(90deg,var(--accent),#ff7b54);font-size:11px;font-weight:700;padding:5px 12px;border-radius:12px;cursor:pointer}
+  .followbtn{background:linear-gradient(90deg,var(--accent),#ff7b54);font-size:11px;font-weight:700;padding:5px 12px;border-radius:12px;cursor:pointer;color:#fff}
   .followbtn.done{background:rgba(255,255,255,.15);color:#aaa}
   .room-close{margin-left:auto;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px}
-  .online{position:absolute;top:56px;left:12px;background:rgba(0,0,0,.35);border-radius:12px;padding:4px 10px;font-size:10px;color:rgba(255,255,255,.7);z-index:5}
-  /* 弹幕区 */
-  .danmaku{position:absolute;left:12px;bottom:64px;width:70%;max-height:180px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;z-index:5}
+  .online{position:absolute;top:56px;left:12px;background:rgba(0,0,0,.35);border-radius:12px;padding:4px 10px;font-size:10px;color:rgba(255,255,255,.7);z-index:5;cursor:pointer}
+  .danmaku{position:absolute;left:12px;bottom:64px;width:72%;max-height:190px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;z-index:5}
   .dm{background:rgba(0,0,0,.4);backdrop-filter:blur(6px);border-radius:14px;padding:6px 12px;font-size:12px;max-width:100%;animation:slidein .25s ease-out;display:flex;gap:6px;align-items:center}
   @keyframes slidein{from{transform:translateX(-16px);opacity:0}to{transform:none;opacity:1}}
   .dm .n{color:rgba(255,255,255,.55);font-size:11px}
   .dm .v{color:#fff}
   .dm.sys{border:1px solid rgba(255,197,61,.5);color:var(--gold);font-size:11px}
+  .dm.enter{border:1px solid rgba(124,92,255,.6);color:#cfc4ff;font-size:11px}
   .dm .badge{font-size:9px;background:var(--accent2);padding:1px 5px;border-radius:6px;color:#fff}
-  /* 礼物动效 */
-  .giftfx{position:absolute;left:12px;top:38%;z-index:9;display:flex;align-items:center;gap:8px;animation:giftfly 2.2s ease-out forwards;pointer-events:none}
+  .giftfx{position:absolute;left:12px;top:38%;z-index:9;display:flex;align-items:center;gap:8px;animation:giftfly 2.4s ease-out forwards;pointer-events:none}
   @keyframes giftfly{0%{transform:translateX(-80px);opacity:0}12%{transform:none;opacity:1}80%{opacity:1}100%{opacity:0;transform:translateY(-30px)}}
   .giftfx .gava{width:34px;height:34px;border-radius:50%;background:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:18px}
   .giftfx .gname{background:linear-gradient(90deg,var(--accent),var(--accent2));padding:4px 12px;border-radius:14px;font-size:13px;font-weight:700;color:#fff}
   .giftfx .gicon{font-size:30px;animation:spin 1s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
-  /* 底部操作栏 */
+  .combo{position:absolute;left:18%;top:30%;z-index:10;font-size:34px;font-weight:900;color:var(--gold);
+    text-shadow:0 0 18px rgba(255,197,61,.8);animation:comboPop 1.4s ease-out forwards;pointer-events:none}
+  @keyframes comboPop{0%{transform:scale(.4);opacity:0}30%{transform:scale(1.3);opacity:1}100%{transform:scale(1);opacity:0}}
+  .heart{position:absolute;bottom:70px;right:40px;font-size:20px;z-index:8;pointer-events:none;animation:heartUp 1.8s ease-out forwards}
+  @keyframes heartUp{0%{transform:translateY(0) scale(.6);opacity:1}100%{transform:translateY(-260px) translateX(var(--dx,0px)) scale(1.3);opacity:0}}
   .room-bar{position:absolute;bottom:12px;left:12px;right:12px;display:flex;gap:8px;align-items:center;z-index:6}
   .chat-input{flex:1;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border-radius:18px;padding:9px 14px;font-size:13px;color:rgba(255,255,255,.6);cursor:pointer}
-  .rbtn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;flex-shrink:0}
+  .rbtn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;flex-shrink:0;position:relative}
   .giftbtn{background:linear-gradient(135deg,var(--accent),#ff7b54)!important}
-  /* 礼物面板 */
   .gift-panel{position:absolute;bottom:0;left:0;right:0;background:rgba(16,17,26,.96);backdrop-filter:blur(14px);border-radius:18px 18px 0 0;padding:14px 12px 90px;z-index:8;transform:translateY(105%);transition:transform .25s}
   .gift-panel.open{transform:none}
   .gift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
@@ -130,22 +165,46 @@
   .gitem .gi{font-size:28px}
   .gitem .gn{font-size:10px;color:var(--txt2);margin-top:4px}
   .gitem .gp{font-size:10px;color:var(--gold)}
+  .gift-ops{display:flex;gap:10px;margin-top:14px}
+  .gift-ops .gobtn{flex:1;padding:12px;border:none;border-radius:14px;background:linear-gradient(90deg,var(--accent),#ff7b54);color:#fff;font-size:14px;font-weight:700;cursor:pointer}
+  .gift-ops .ten{flex:0 0 90px;padding:12px;border:1px solid var(--accent);border-radius:14px;background:transparent;color:var(--accent);font-size:14px;font-weight:700;cursor:pointer}
+  .rankrow{display:flex;align-items:center;gap:12px;padding:13px 4px;border-bottom:1px solid var(--line)}
+  .rankrow .no{width:24px;text-align:center;font-weight:900;font-size:15px}
+  .rankrow .amt{margin-left:auto;color:var(--gold);font-weight:700;font-size:13px}
+  /* ---------- 主播端 ---------- */
+  #hostRoom{position:fixed;inset:0;background:#000;z-index:100;display:none;flex-direction:column}
+  #hostRoom.active{display:flex}
+  .hstats{position:absolute;top:14px;left:12px;display:flex;gap:8px;z-index:5}
+  .hstat{background:rgba(0,0,0,.45);backdrop-filter:blur(8px);border-radius:14px;padding:6px 12px;text-align:center}
+  .hstat b{font-size:14px;display:block}
+  .hstat span{font-size:9px;color:rgba(255,255,255,.6)}
+  .endbtn{position:absolute;top:14px;right:12px;z-index:5;background:rgba(255,77,109,.9);border-radius:14px;padding:7px 14px;font-size:12px;font-weight:700;cursor:pointer}
+  .host-tools{position:absolute;right:12px;top:110px;z-index:6;display:flex;flex-direction:column;gap:12px}
+  .htool{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);
+    display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;flex-direction:column}
+  .htool small{font-size:8px;color:rgba(255,255,255,.7)}
   /* ---------- 弹层 ---------- */
   .sheet{position:fixed;inset:0;z-index:200;display:none;align-items:flex-end;justify-content:center}
   .sheet.open{display:flex}
+  .sheet.center{align-items:center;padding:0 30px}
   .sheet .mask{position:absolute;inset:0;background:rgba(0,0,0,.6)}
   .sheet .body{position:relative;width:100%;max-width:414px;background:var(--panel);border-radius:20px 20px 0 0;padding:20px 20px 30px;animation:up .25s}
+  .sheet.center .body{border-radius:18px;width:100%}
   @keyframes up{from{transform:translateY(60%)}to{transform:none}}
   .sheet h3{font-size:16px;margin-bottom:16px}
   .close-x{position:absolute;top:14px;right:16px;color:var(--txt2);font-size:18px;cursor:pointer}
   /* 充值 */
-  .amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
-  .amt{border:1px solid var(--line);border-radius:12px;padding:14px 0;text-align:center;cursor:pointer;background:var(--panel2)}
+  .amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+  .amt{border:1px solid var(--line);border-radius:12px;padding:12px 0;text-align:center;cursor:pointer;background:var(--panel2)}
   .amt.sel{border-color:var(--gold);background:rgba(255,197,61,.08)}
-  .amt .c{font-size:20px;font-weight:800;color:var(--gold)}
+  .amt .c{font-size:19px;font-weight:800;color:var(--gold)}
   .amt .p{font-size:11px;color:var(--txt2);margin-top:3px}
   .amt .bonus{font-size:9px;color:var(--accent);margin-top:2px}
-  .payrow{display:flex;gap:10px;margin-bottom:20px}
+  .custom-row{display:none;gap:10px;margin-bottom:14px;align-items:center}
+  .custom-row.show{display:flex}
+  .custom-row input{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:var(--txt);font-size:15px;outline:none}
+  .custom-row span{font-size:12px;color:var(--txt2);white-space:nowrap}
+  .payrow{display:flex;gap:10px;margin-bottom:18px}
   .payopt{flex:1;display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;font-size:14px;font-weight:600;background:var(--panel2)}
   .payopt.sel{border-width:1.5px}
   .payopt.wechat.sel{border-color:var(--wechat)}
@@ -153,6 +212,36 @@
   .payico{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800}
   .payico.w{background:var(--wechat)} .payico.a{background:var(--alipay)}
   .bigbtn{width:100%;padding:14px;border:none;border-radius:14px;background:linear-gradient(90deg,var(--accent),#ff7b54);color:#fff;font-size:15px;font-weight:700;cursor:pointer}
+  .bigbtn:disabled{opacity:.6}
+  /* 支付确认模拟 */
+  .paymodal{text-align:center}
+  .paymodal .pico{font-size:44px;margin:8px 0}
+  .paymodal .pamt{font-size:34px;font-weight:900;margin:10px 0 4px}
+  .paymodal .pto{font-size:12px;color:var(--txt2);margin-bottom:18px}
+  .paymodal .finger{font-size:40px;animation:pulse 1s infinite}
+  .paymodal .phint{font-size:12px;color:var(--txt2);margin-top:10px}
+  .paymodal .ok{font-size:52px;animation:comboPop .8s}
+  /* 分享 */
+  .share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:8px}
+  .share-it{text-align:center;cursor:pointer}
+  .share-it .si{width:48px;height:48px;border-radius:50%;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:22px}
+  .share-it p{font-size:10px;color:var(--txt2)}
+  /* 房间输入 */
+  .input-row{display:flex;gap:10px;margin-bottom:14px}
+  .input-row input{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--txt);font-size:14px;outline:none}
+  .emoji-row{display:flex;gap:10px;font-size:22px;margin-bottom:16px;cursor:pointer}
+  /* 开播准备 */
+  .cat-pick{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .cat-pick .cp{padding:8px 16px;border-radius:18px;background:var(--panel2);border:1px solid var(--line);font-size:13px;cursor:pointer}
+  .cat-pick .cp.on{border-color:var(--accent);color:var(--accent);background:rgba(255,77,109,.1)}
+  /* 配对成功 */
+  .match-body{text-align:center;background:linear-gradient(160deg,#2b1a3d,#1a1030);border-radius:20px!important}
+  .match-body .mavs{display:flex;justify-content:center;align-items:center;gap:-10px;margin:18px 0 6px}
+  .match-body .mava{width:84px;height:84px;border-radius:50%;background:var(--panel2);border:3px solid var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:44px;margin:0 -12px;z-index:1}
+  .match-body .mheart{font-size:40px;z-index:2;margin:0 -4px;animation:comboPop .9s}
+  .match-body h2{font-size:20px;margin:12px 0 6px}
+  .match-body p{font-size:12px;color:var(--txt2)}
   /* 聊天页 */
   #chat{position:fixed;inset:0;background:var(--bg);z-index:150;display:none;flex-direction:column;max-width:414px;margin:0 auto}
   #chat.active{display:flex}
@@ -169,22 +258,24 @@
   /* toast */
   #toast{position:fixed;top:18%;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.8);color:#fff;
     padding:10px 22px;border-radius:20px;font-size:13px;z-index:999;display:none;max-width:80%;text-align:center}
-  .empty{padding:40px 0;text-align:center;color:var(--txt2);font-size:13px}
+  .empty{padding:50px 20px;text-align:center;color:var(--txt2);font-size:13px}
 </style>
 </head>
 <body>
 <div class="phone">
 
-  <!-- ================= 首页 ================= -->
+  <!-- ================= 首页（C端） ================= -->
   <div class="page active" id="pg-home">
     <div class="topbar">
       <span class="logo">星遇 Live</span>
       <span class="coinchip" onclick="openRecharge()">🪙 <b id="coinTop">5,200</b> <span style="color:var(--txt2);font-size:12px">充值</span></span>
     </div>
-    <div class="cats">
-      <span class="cat on">热门</span><span class="cat">颜值</span><span class="cat">唱歌</span>
-      <span class="cat">舞蹈</span><span class="cat">游戏</span><span class="cat">新秀</span>
+    <div class="cats" id="homeCats"></div>
+    <div id="followStripWrap" style="display:none">
+      <div class="sec-title">关注的直播 <span>滑动查看</span></div>
+      <div class="follow-strip" id="followStrip"></div>
     </div>
+    <div class="sec-title">热门直播 <span id="liveCnt"></span></div>
     <div class="grid" id="liveGrid"></div>
     <div style="height:20px"></div>
   </div>
@@ -192,20 +283,19 @@
   <!-- ================= 交友 ================= -->
   <div class="page" id="pg-friend">
     <div class="topbar"><span class="logo">邂逅</span><span class="coinchip" onclick="go('home')">🪙 <b id="coinTop2">5,200</b></span></div>
-    <div class="match-hero">
-      <h2>滑动找到有缘人</h2>
-      <p>右滑 ❤️ 关注 · 左滑换下一位 · 点卡片私聊</p>
-    </div>
+    <div class="match-hero"><h2>滑动找到有缘人</h2><p>右滑 ❤️ 关注 · ⭐ 超级喜欢 · 点卡片私聊</p></div>
+    <div class="fcats" id="fCats"></div>
     <div class="swipe-area" id="swipeArea"></div>
     <div class="swipe-actions">
       <div class="sbtn" onclick="swipeSkip()">✕</div>
+      <div class="sbtn super" onclick="swipeSuper()">⭐</div>
       <div class="sbtn like" onclick="swipeLike()">❤️</div>
     </div>
   </div>
 
   <!-- ================= 消息 ================= -->
   <div class="page" id="pg-msg">
-    <div class="topbar"><span class="logo">消息</span></div>
+    <div class="topbar"><span class="logo">消息</span><span style="font-size:12px;color:var(--txt2)" onclick="toast('已全部读')">全部已读</span></div>
     <div id="convList"></div>
   </div>
 
@@ -215,7 +305,7 @@
     <div class="me-head">
       <div class="me-ava">🙋‍♂️</div>
       <div>
-        <div style="font-size:17px;font-weight:700">海曙 <span class="lv">Lv.8</span></div>
+        <div style="font-size:17px;font-weight:700">海曙 <span class="lv" id="meLv">Lv.8</span></div>
         <div style="font-size:12px;color:var(--txt2);margin-top:4px">ID: 20261022 · 真实认证 ✔</div>
       </div>
     </div>
@@ -224,16 +314,21 @@
       <div class="big" id="coinMe">5,200</div>
       <div class="wrow">
         <div class="wbtn primary" onclick="openRecharge()">立即充值</div>
-        <div class="wbtn" onclick="toast('收益记录（演示）')">收益</div>
-        <div class="wbtn" onclick="toast('明细：暂为模拟账本（演示）')">明细</div>
+        <div class="wbtn" onclick="openSub('pg-ledger')">明细</div>
+        <div class="wbtn" onclick="toast('主播收益在开播结算中体现')">收益</div>
       </div>
     </div>
+    <div class="lvbar">
+      <div style="display:flex;justify-content:space-between;font-size:12px"><b>⚡ 等级成长</b><span style="color:var(--txt2)" id="lvSpent"></span></div>
+      <div class="prog"><i id="lvProg" style="width:0%"></i></div>
+      <div style="font-size:10px;color:var(--txt2);margin-top:6px">消费星币提升等级，解锁专属徽章与进场特效</div>
+    </div>
     <div class="menulist">
+      <div class="mrow" onclick="openSub('pg-follows')">❤️ 我的关注 <span class="r" id="followCnt">0 ›</span></div>
+      <div class="mrow" onclick="openStart()">📷 我要开播 <span class="r">认证主播 ›</span></div>
       <div class="mrow" onclick="toast('实名认证：已通过（演示）')">🪪 实名认证 <span class="r">已认证 ›</span></div>
-      <div class="mrow" onclick="toast('我的关注（演示）')">❤️ 我的关注 <span class="r" id="followCnt">0 ›</span></div>
-      <div class="mrow" onclick="toast('等级体系：消费/活跃双轨（演示）')">⚡ 我的等级 <span class="r">Lv.8 ›</span></div>
-      <div class="mrow" onclick="toast('联系客服（演示）')">🎧 客服与反馈 <span class="r">›</span></div>
-      <div class="mrow" onclick="toast('设置（演示）')">⚙️ 设置 <span class="r">›</span></div>
+      <div class="mrow" onclick="toast('青少年模式（演示）')">🛡 青少年模式 <span class="r">未开启 ›</span></div>
+      <div class="mrow" onclick="openSub('pg-settings')">⚙️ 设置 <span class="r">›</span></div>
     </div>
   </div>
 
@@ -241,43 +336,73 @@
   <div class="tabbar">
     <div class="tab on" data-p="home" onclick="go('home')"><span class="ico">🏠</span>首页</div>
     <div class="tab" data-p="friend" onclick="go('friend')"><span class="ico">💕</span>邂逅</div>
-    <div class="tab" onclick="toast('开播需主播资质（演示）')"><span class="tab-live-btn">📷</span></div>
-    <div class="tab" data-p="msg" onclick="go('msg')"><span class="ico">💬</span>消息<span class="dot" id="msgDot" style="display:none">1</span></div>
+    <div class="tab" onclick="openStart()"><span class="tab-live-btn">📷</span><span style="margin-top:2px">开播</span></div>
+    <div class="tab" data-p="msg" onclick="go('msg')"><span class="ico">💬</span>消息<span class="badge" id="msgDot" style="display:none">0</span></div>
     <div class="tab" data-p="me" onclick="go('me')"><span class="ico">👤</span>我的</div>
   </div>
 
-  <!-- ================= 直播间 ================= -->
+  <!-- ================= 观众直播间 ================= -->
   <div id="room">
     <div class="video">
       <div class="glow"></div>
-      <div class="cam"><div class="face" id="camFace">💃</div><div class="hint">视频流区域 · 正式版接入腾讯云直播 SDK（快直播/RTC）</div></div>
+      <div class="cam"><div class="face" id="camFace">💃</div><div class="hint" id="camHint">视频流区域 · 正式版接入腾讯云直播 SDK（快直播/RTC）</div></div>
       <div class="room-top">
         <div class="hostcard"><div class="ava" id="hostAva">💃</div><div><div class="hn" id="hostName">—</div><div class="hf" id="hostMeta">—</div></div><div class="followbtn" id="followBtn" onclick="toggleFollow()">+ 关注</div></div>
         <div class="room-close" onclick="closeRoom()">✕</div>
       </div>
-      <div class="online" id="onlineCnt">👁 0 观看</div>
+      <div class="online" onclick="openRank()">👁 <span id="onlineCnt">0</span> 观看 · <span id="heatCnt">🔥热度 0</span></div>
       <div class="danmaku" id="danmaku"></div>
-      <div class="giftfx-layer" id="giftLayer"></div>
+      <div id="giftLayer"></div>
       <div class="room-bar">
-        <div class="chat-input" onclick="quickChatInput()">说点什么…</div>
-        <div class="rbtn" onclick="quickChatInput()">💬</div>
-        <div class="rbtn" onclick="toast('连麦：申请排队中（演示）')">🎙</div>
+        <div class="chat-input" onclick="openRoomInput()">说点什么…</div>
+        <div class="rbtn" onclick="likeRoom()">❤️</div>
+        <div class="rbtn" onclick="openRank()">🏆</div>
+        <div class="rbtn" onclick="openShare()">↗️</div>
         <div class="rbtn giftbtn" onclick="toggleGiftPanel()">🎁</div>
       </div>
       <div class="gift-panel" id="giftPanel">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
           <b style="font-size:14px">送出心意</b>
-          <span style="font-size:12px;color:var(--txt2)">🪙 <b id="coinGift" style="color:var(--gold)">5,200</b> <span onclick="closeRoomSheet(openRecharge)" style="color:var(--accent);cursor:pointer">充值</span></span>
+          <span style="font-size:12px;color:var(--txt2)">🪙 <b id="coinGift" style="color:var(--gold)">0</b> <span onclick="giftRecharge()" style="color:var(--accent);cursor:pointer">充值</span></span>
         </div>
         <div class="gift-grid" id="giftGrid"></div>
-        <button class="bigbtn" style="margin-top:14px" onclick="sendGift()">赠送（双击连送）</button>
+        <div class="gift-ops">
+          <button class="ten" onclick="sendGift(10)">连送×10</button>
+          <button class="gobtn" onclick="sendGift(1)">赠送</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 主播端直播间 ================= -->
+  <div id="hostRoom">
+    <div class="video" style="background:linear-gradient(160deg,#0f1030,#1a2a4d 60%,#101425)">
+      <div class="glow" style="background:radial-gradient(circle at 50% 35%,rgba(46,213,115,.18),transparent 60%)"></div>
+      <div class="cam"><div class="face" style="animation:none">📷</div><div class="hint">推流预览（模拟摄像头）<br>正式版：TRTC/MLVB SDK 采集 + 推流</div></div>
+      <div class="hstats">
+        <div class="hstat"><b id="hDur">00:00</b><span>直播时长</span></div>
+        <div class="hstat"><b id="hViews">0</b><span>观看</span></div>
+        <div class="hstat"><b id="hIncome" style="color:var(--gold)">0</b><span>礼物收益🪙</span></div>
+      </div>
+      <div class="endbtn" onclick="confirmEndLive()">■ 下播</div>
+      <div class="host-tools">
+        <div class="htool" onclick="toast('连麦管理：观众申请列表（演示）')">🎙<small>连麦</small></div>
+        <div class="htool" onclick="openRank()">🏆<small>榜单</small></div>
+        <div class="htool" onclick="toast('美颜滤镜面板（演示）')">✨<small>美颜</small></div>
+      </div>
+      <div class="danmaku" id="hostDanmaku"></div>
+      <div id="hostGiftLayer"></div>
+      <div class="room-bar">
+        <div class="chat-input" onclick="openRoomInput()">发一条弹幕…</div>
+        <div class="rbtn" onclick="toast('房间管理：禁言/踢人（演示）')">🛡</div>
+        <div class="rbtn" onclick="openShare()">↗️</div>
       </div>
     </div>
   </div>
 
   <!-- ================= 私聊 ================= -->
   <div id="chat">
-    <div class="chat-top"><span onclick="closeChat()" style="cursor:pointer">‹</span><div class="ava" id="chatAva">🙂</div><b id="chatName">—</b></div>
+    <div class="chat-top"><span class="back" onclick="closeChat()">‹</span><div class="ava" id="chatAva" style="width:34px;height:34px;font-size:18px">🙂</div><b id="chatName">—</b><span style="margin-left:auto;font-size:12px;color:var(--txt2)" onclick="toast('举报/拉黑（演示）')">···</span></div>
     <div class="chat-body" id="chatBody"></div>
     <div class="chat-foot">
       <input id="chatInput" placeholder="发消息…" onkeydown="if(event.key==='Enter')sendChatMsg()">
@@ -285,37 +410,164 @@
     </div>
   </div>
 
-  <!-- ================= 充值弹层 ================= -->
+  <!-- ================= 子页面：账本明细 ================= -->
+  <div class="subpage" id="pg-ledger">
+    <div class="sub-head"><span class="back" onclick="closeSub('pg-ledger')">‹</span>账本明细</div>
+    <div class="sub-body" id="ledgerList"></div>
+  </div>
+
+  <!-- ================= 子页面：关注列表 ================= -->
+  <div class="subpage" id="pg-follows">
+    <div class="sub-head"><span class="back" onclick="closeSub('pg-follows')">‹</span>我的关注</div>
+    <div class="sub-body" id="followList"></div>
+  </div>
+
+  <!-- ================= 子页面：设置 ================= -->
+  <div class="subpage" id="pg-settings">
+    <div class="sub-head"><span class="back" onclick="closeSub('pg-settings')">‹</span>设置</div>
+    <div class="sub-body">
+      <div class="menulist" style="margin-top:16px">
+        <div class="mrow">🔔 推送通知 <span class="r"><span class="switch on" id="swNotify" onclick="this.classList.toggle('on');toast('推送已切换（演示）')"><i></i></span></span></div>
+        <div class="mrow">📶 省流模式 <span class="r"><span class="switch" id="swData" onclick="this.classList.toggle('on');toast('省流模式已切换（演示）')"><i></i></span></span></div>
+        <div class="mrow" onclick="toast('已清空缓存（演示）')">🧹 清除图片缓存 <span class="r">›</span></div>
+        <div class="mrow" onclick="wipeData()">🗑 清空本地数据 <span class="r">›</span></div>
+        <div class="mrow" onclick="toast('用户协议 / 隐私政策（演示）')">📄 用户协议与隐私 <span class="r">›</span></div>
+        <div class="mrow" onclick="toast('星遇 Live v2.0 · 演示版')">ℹ️ 关于 <span class="r">v2.0 ›</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：充值 ================= -->
   <div class="sheet" id="rechargeSheet">
     <div class="mask" onclick="closeSheet('rechargeSheet')"></div>
     <div class="body">
       <span class="close-x" onclick="closeSheet('rechargeSheet')">✕</span>
-      <h3>🪙 星币充值 <span style="font-size:10px;color:var(--txt2);font-weight:400">（当前为模拟支付，正式版接入微信/支付宝商户号）</span></h3>
+      <h3>🪙 星币充值 <span style="font-size:10px;color:var(--txt2);font-weight:400">（模拟支付，正式版接商户号）</span></h3>
       <div class="amounts" id="amountGrid"></div>
+      <div class="custom-row" id="customRow">
+        <input id="customAmt" type="number" placeholder="输入金额" min="1" max="5000" oninput="updPayBtn()">
+        <span>= 🪙<b id="customCoin" style="color:var(--gold)">0</b></span>
+      </div>
       <div class="payrow">
         <div class="payopt wechat sel" id="payWechat" onclick="pickPay('wechat')"><span class="payico w">微</span>微信支付</div>
         <div class="payopt alipay" id="payAlipay" onclick="pickPay('alipay')"><span class="payico a">支</span>支付宝</div>
       </div>
       <button class="bigbtn" id="payBtn" onclick="doPay()">确认支付 ¥30.00</button>
-      <p style="font-size:10px;color:var(--txt2);margin-top:12px;text-align:center">正式版：下单 → 唤起微信/支付宝 → 服务端回调验签 → 双记账入账，防刷防重放</p>
+      <p style="font-size:10px;color:var(--txt2);margin-top:12px;text-align:center">正式版：下单 → 唤起渠道 → 回调验签 → 幂等双记账入账</p>
     </div>
+  </div>
+
+  <!-- ================= 弹层：支付确认（模拟） ================= -->
+  <div class="sheet center" id="paySheet">
+    <div class="mask"></div>
+    <div class="body paymodal" style="max-width:320px">
+      <div id="payPending">
+        <div class="pico" id="payChannelIco">💚</div>
+        <div style="font-size:13px;color:var(--txt2)">向「星遇 Live」付款</div>
+        <div class="pamt" id="payAmt">¥30.00</div>
+        <div class="finger">🖐</div>
+        <div class="phint">请验证指纹 / 支付密码</div>
+      </div>
+      <div id="payDone" style="display:none">
+        <div class="ok">✅</div>
+        <div style="font-size:16px;font-weight:700;margin:10px 0 4px">支付成功</div>
+        <div class="phint" id="payDoneSub"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：房间输入 ================= -->
+  <div class="sheet" id="inputSheet">
+    <div class="mask" onclick="closeSheet('inputSheet')"></div>
+    <div class="body">
+      <h3>发表弹幕</h3>
+      <div class="input-row"><input id="roomMsgInput" placeholder="友善发言，文明互动" maxlength="50" onkeydown="if(event.key==='Enter')sendRoomMsg()"></div>
+      <div class="emoji-row" id="emojiRow"></div>
+      <button class="bigbtn" onclick="sendRoomMsg()">发送</button>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：贡献榜 ================= -->
+  <div class="sheet" id="rankSheet">
+    <div class="mask" onclick="closeSheet('rankSheet')"></div>
+    <div class="body">
+      <span class="close-x" onclick="closeSheet('rankSheet')">✕</span>
+      <h3>🏆 本小时贡献榜</h3>
+      <div id="rankList"></div>
+      <p style="font-size:11px;color:var(--txt2);margin-top:12px;text-align:center">每小时重置 · 榜一解锁专属座驾进场特效</p>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：分享 ================= -->
+  <div class="sheet" id="shareSheet">
+    <div class="mask" onclick="closeSheet('shareSheet')"></div>
+    <div class="body">
+      <h3>分享到</h3>
+      <div class="share-grid">
+        <div class="share-it" onclick="doShare('微信好友')"><div class="si" style="background:var(--wechat)">💬</div><p>微信</p></div>
+        <div class="share-it" onclick="doShare('朋友圈')"><div class="si" style="background:#07c160">🌐</div><p>朋友圈</p></div>
+        <div class="share-it" onclick="doShare('QQ')"><div class="si" style="background:#12b7f5">🐧</div><p>QQ</p></div>
+        <div class="share-it" onclick="doShare('复制链接')"><div class="si" style="background:#3a3d4a">🔗</div><p>复制链接</p></div>
+        <div class="share-it" onclick="doShare('生成海报')"><div class="si" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">🖼</div><p>海报</p></div>
+        <div class="share-it" onclick="doShare('微博')"><div class="si" style="background:#e6162d">🔴</div><p>微博</p></div>
+        <div class="share-it" onclick="doShare('私信好友')"><div class="si" style="background:#5c6bc0">✉️</div><p>私信</p></div>
+        <div class="share-it" onclick="doShare('举报')"><div class="si" style="background:#3a3d4a">⚠️</div><p>举报</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：开播准备 ================= -->
+  <div class="sheet" id="startSheet">
+    <div class="mask" onclick="closeSheet('startSheet')"></div>
+    <div class="body">
+      <span class="close-x" onclick="closeSheet('startSheet')">✕</span>
+      <h3>📷 开播准备 <span style="font-size:10px;color:var(--txt2);font-weight:400">（主播端 · 正式版需实名+资质审核）</span></h3>
+      <div class="input-row"><input id="liveTitle" placeholder="给直播间起个标题" maxlength="20" value="晚上的温柔电台"></div>
+      <div style="font-size:12px;color:var(--txt2);margin-bottom:8px">选择分类</div>
+      <div class="cat-pick" id="startCats"></div>
+      <button class="bigbtn" onclick="doStartLive()">开始直播（模拟推流）</button>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：下播结算 ================= -->
+  <div class="sheet center" id="endSheet">
+    <div class="mask"></div>
+    <div class="body" style="max-width:330px;text-align:center">
+      <h3 style="margin-bottom:6px">🎉 本场直播结束</h3>
+      <div id="endStats" style="font-size:14px;line-height:2.2;margin:10px 0 16px"></div>
+      <button class="bigbtn" onclick="claimIncome()">领取收益（分成 50%）</button>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：配对成功 ================= -->
+  <div class="sheet center" id="matchSheet">
+    <div class="mask" onclick="closeSheet('matchSheet')"></div>
+    <div class="body match-body" style="max-width:340px">
+      <div class="mavs"><div class="mava">🙋‍♂️</div><div class="mheart">💖</div><div class="mava" id="matchAva">👩‍🎨</div></div>
+      <h2>配对成功！</h2>
+      <p>你和 <b id="matchName" style="color:var(--accent)">—</b> 互相喜欢上了对方</p>
+      <div style="display:flex;gap:10px;margin-top:18px">
+        <button class="bigbtn" style="background:var(--panel2);color:var(--txt)" onclick="closeSheet('matchSheet')">继续滑</button>
+        <button class="bigbtn" onclick="matchChat()">打个招呼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 弹层：会话操作 ================= -->
+  <div class="sheet" id="convSheet">
+    <div class="mask" onclick="closeSheet('convSheet')"></div>
+    <div class="body" id="convSheetBody"></div>
   </div>
 
   <div id="toast"></div>
 </div>
 
 <script>
-/* ============ 状态 ============ */
-const S = {
-  coins: 5200, follows: new Set(), unread: 0,
-  payMethod: 'wechat', payAmount: 30, coinAmount: 3000,
-  curHost: null, curUser: null, swipeIdx: 0, selectedGift: 0,
-  conversations: [
-    {id:'sys', ava:'📣', name:'系统通知', last:'充值成功到账 3000 星币', time:'10:02', msgs:[{me:0,t:'欢迎使用星遇 Live！充值与礼物均为模拟流程，正式版接入真实支付通道。'}]},
-  ]
-};
+/* ============ 常量与状态 ============ */
+const $ = id => document.getElementById(id);
+const fmt = n => n.toLocaleString('en-US');
+const now = () => { const d=new Date(); return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; };
 
-/* ============ 数据 ============ */
 const HOSTS = [
   {ava:'💃',name:'苏晚晚',city:'上海',cat:'舞蹈',views:'2.3万',grad:'linear-gradient(160deg,#3d1a4a,#1a1030)'},
   {ava:'🎤',name:'阿哲',city:'广州',cat:'唱歌',views:'1.8万',grad:'linear-gradient(160deg,#0f2d4a,#101430)'},
@@ -326,9 +578,9 @@ const HOSTS = [
 ];
 const USERS = [
   {ava:'👩‍🎨',name:'林小满',age:24,city:'上海 · 插画师',bio:'周末 loves livehouse 和猫',tags:['猫奴','探店','健身']},
-  {ava:'👱‍♀️',name:'Mia',age:26,city:'深圳 · 产品经理',bio:'工作日理性，周末感性的射手座',tags:['旅行','咖啡','滑雪']},
+  {ava:'👱‍♀️',name:'Mia',age:26,city:'深圳 · 产品经理',bio:'工作日理性，周末感性的射手座',tags:['旅行','咖啡','滑雪'],matchBack:true},
   {ava:'🧕',name:'南希',age:23,city:'杭州 · 舞蹈老师',bio:'想找一个人一起看日出',tags:['舞蹈','瑜伽','电影']},
-  {ava:'👩‍💻',name:'安安',age:27,city:'北京 · 程序员',bio:'写代码的间隙也写诗',tags:['科技','脱口秀','跑步']},
+  {ava:'👩‍💻',name:'安安',age:27,city:'北京 · 程序员',bio:'写代码的间隙也写诗',tags:['科技','脱口秀','跑步'],matchBack:true},
   {ava:'👧',name:'桃子',age:22,city:'成都 · 学生',bio:'奶茶测评博主，甜度全糖',tags:['美食','音乐','拍照']},
 ];
 const GIFTS = [
@@ -342,94 +594,218 @@ const AMOUNTS = [
 const FAKE_MSGS = [
   ['小明','主播唱一首《晚风》吧！'],['琪琪','刚来，什么水平？'],['路人甲','这也太好看了吧 😍'],
   ['大熊','礼物走一波 🚀'],['Lily','关注了！每天都播吗'],['阿伟','前排围观'],['糖糖','把 babe 拉一个'],
-  ['老王','氛围组已就位'],['小鹿','666666'],['深夜食堂','聊会天呗~'],
+  ['老王','氛围组已就位'],['小鹿','666666'],['深夜食堂','聊会天呗~'],['阿飞','氛围感拉满'],
 ];
+const FAKE_NAMES = ['小七','芒果','柚子','阿泽','Nana','大风','拾光','一颗糖'];
+const ENTER_NAMES = ['小七','Nana','拾光','芒果','大风','一颗糖','柚子','阿泽'];
+const HOME_CATS = ['热门','颜值','唱歌','舞蹈','游戏','美食','新秀'];
+const START_CATS = ['聊天','唱歌','舞蹈','美食','游戏','户外'];
+const EMOJIS = ['😄','😂','❤️','🎁','👍','🌹','😍','🤔'];
+const RANKERS = [
+  {ava:'🐯',name:'虎哥不吃鱼',amt:52000},{ava:'🌸',name:'一朵栀子',amt:18888},{ava:'👑',name:'King',amt:6666},
+];
+const REPLY_POOL = ['嗯嗯，你说 👀','哈哈哈我也是！','在忙，晚点聊~','真的假的？','改天一起呀 😊','送你个小礼物回礼 🌹','你也在看直播吗','刚看到你的主页，品味不错'];
+
+/* ============ 持久化 ============ */
+const KEY = 'starlive_v2';
+const S = {
+  coins:5200, follows:new Set(), payMethod:'wechat', amtSel:0, customMode:false,
+  curHost:null, curUser:null, swipeIdx:0, fFilter:'全部', selectedGift:0,
+  ledger:[], conversations:[
+    {id:'sys',ava:'📣',name:'系统通知',last:'欢迎使用星遇 Live',time:'刚刚',unread:0,pin:true,
+     msgs:[{me:0,t:'欢迎使用星遇 Live！充值、送礼为模拟流程；点底栏「开播」可体验主播端。'}]},
+  ],
+};
+function save(){
+  try{
+    localStorage.setItem(KEY, JSON.stringify({
+      coins:S.coins, follows:[...S.follows], ledger:S.ledger.slice(-100),
+      convs:S.conversations.slice(0,20).map(c=>({...c,msgs:c.msgs.slice(-20)})),
+    }));
+  }catch(e){}
+}
+function load(){
+  try{
+    const d=JSON.parse(localStorage.getItem(KEY)||'null'); if(!d)return;
+    if(typeof d.coins==='number') S.coins=d.coins;
+    if(Array.isArray(d.follows)) S.follows=new Set(d.follows);
+    if(Array.isArray(d.ledger)) S.ledger=d.ledger;
+    if(Array.isArray(d.convs)&&d.convs.length) S.conversations=d.convs;
+  }catch(e){}
+}
+function wipeData(){
+  if(!confirm('清空本地数据（余额/关注/消息/账本）？此操作不可恢复。'))return;
+  localStorage.removeItem(KEY); location.reload();
+}
 
 /* ============ 工具 ============ */
-const $ = id => document.getElementById(id);
-const fmt = n => n.toLocaleString('en-US');
 function toast(t){ const el=$('toast'); el.textContent=t; el.style.display='block'; clearTimeout(el._t); el._t=setTimeout(()=>el.style.display='none',1800); }
 function syncCoins(){ ['coinTop','coinTop2','coinMe','coinGift'].forEach(i=>{ if($(i)) $(i).textContent=fmt(S.coins); }); }
 function syncFollows(){ $('followCnt').textContent = S.follows.size + ' ›'; }
-
-/* ============ 路由 ============ */
 function go(p){
   document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
   $('pg-'+p).classList.add('active');
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.p===p));
   if(p==='msg') renderConvs();
+  if(p==='me') renderMe();
+  if(p==='home') renderHome();
+}
+function openSub(id){ $(id).classList.add('active'); if(id==='pg-ledger')renderLedger(); if(id==='pg-follows')renderFollowList(); if(id==='pg-me')renderMe(); }
+function closeSub(id){ $(id).classList.remove('active'); }
+function openSheet(id){ $(id).classList.add('open'); }
+function closeSheet(id){ $(id).classList.remove('open'); }
+
+/* ============ 账本 ============ */
+function addLedger(icon,title,amt){
+  S.ledger.push({icon,title,amt,time:now()});
+  if(S.ledger.length>200) S.ledger=S.ledger.slice(-100);
+  save();
 }
 
 /* ============ 首页 ============ */
 function renderHome(){
-  $('liveGrid').innerHTML = HOSTS.map((h,i)=>`
-    <div class="card" onclick="openRoom(${i})">
+  $('homeCats').innerHTML = HOME_CATS.map((c,i)=>`<span class="cat ${i===0?'on':''}" onclick="pickHomeCat(this,'${c}')">${c}</span>`).join('');
+  const follows=[...S.follows];
+  const wrap=$('followStripWrap');
+  if(follows.length){
+    wrap.style.display='block';
+    $('followStrip').innerHTML = follows.map(n=>{
+      const h=HOSTS.find(x=>x.name===n); const u=USERS.find(x=>x.name===n);
+      const ava=h?h.ava:(u?u.ava:'🙂');
+      const on = h?' · 直播中':'';
+      const act = h ? `openRoom(${HOSTS.indexOf(h)})` : `toast('对方未开播')`;
+      return `<div class="fitem" onclick="${act}"><div class="fa">${ava}</div><p>${n}${on}</p></div>`;
+    }).join('');
+  } else wrap.style.display='none';
+  const list = S.homeCat && S.homeCat!=='热门' ? HOSTS.filter(h=>h.cat===S.homeCat) : HOSTS;
+  $('liveCnt').textContent = list.length+' 场直播';
+  $('liveGrid').innerHTML = list.length? list.map(h=>{
+    const i=HOSTS.indexOf(h);
+    return `<div class="card" onclick="openRoom(${i})">
       <div class="cover" style="background:${h.grad}">${h.ava}
         <span class="livebadge">● LIVE</span><span class="views">👁 ${h.views}</span></div>
-      <div class="meta">${h.name}<div class="sub"><span>#${h.cat}</span><span class="city">📍${h.city}</span></div></div>
-    </div>`).join('');
+      <div class="meta">${h.name}<div class="sub"><span>#${h.cat}</span><span class="city">📍${h.city}</span></div></div></div>`;
+  }).join('') : '<div class="empty" style="grid-column:1/3">该分类暂无直播</div>';
 }
+function pickHomeCat(el,c){ document.querySelectorAll('#homeCats .cat').forEach(e=>e.classList.remove('on')); el.classList.add('on'); S.homeCat=c; renderHome(); }
 
-/* ============ 直播间 ============ */
-let roomTimer=null, onlineN=0;
+/* ============ 观众直播间 ============ */
+let roomTimer=null, enterTimer=null, onlineN=0, heatN=0, watchSec=0, myLikeCnt=0;
 function openRoom(i){
-  const h=HOSTS[i]; S.curHost=h;
+  const h=HOSTS[i]; S.curHost=h; watchSec=0;
   $('hostAva').textContent=h.ava; $('hostName').textContent=h.name;
   $('hostMeta').textContent=`${h.cat}主播 · ${h.city}`; $('camFace').textContent=h.ava;
-  $('danmaku').innerHTML=''; onlineN=800+Math.floor(Math.random()*3000);
+  $('danmaku').innerHTML='';
+  onlineN=800+Math.floor(Math.random()*3000); heatN=onlineN*3+Math.floor(Math.random()*5000);
   updOnline();
-  addDm('sys', null, `欢迎来到 ${h.name} 的直播间，文明发言，禁止诱导交易`);
+  addDm('sys',null,`欢迎来到 ${h.name} 的直播间，文明发言，禁止诱导交易`);
   const fb=$('followBtn'); fb.classList.toggle('done',S.follows.has(h.name));
   fb.textContent = S.follows.has(h.name)?'已关注':'+ 关注';
   $('giftPanel').classList.remove('open');
   $('room').classList.add('active');
-  clearInterval(roomTimer);
+  clearInterval(roomTimer); clearInterval(enterTimer);
   roomTimer=setInterval(()=>{
-    const [n,t]=FAKE_MSGS[Math.floor(Math.random()*FAKE_MSGS.length)];
-    addDm('dm',n,t);
-    if(Math.random()<.3){ onlineN+=Math.floor(Math.random()*15)+1; updOnline(); }
+    watchSec++;
+    const r=Math.random();
+    if(r<.55){ const [n,t]=FAKE_MSGS[Math.floor(Math.random()*FAKE_MSGS.length)]; addDm('dm',n,t); }
+    if(r>.75){ onlineN+=Math.floor(Math.random()*15)+1; heatN+=Math.floor(Math.random()*60); updOnline(); }
+    if(r>.9){ fakeGiftToHost(); }
   },2200);
+  enterTimer=setInterval(()=>{ addDm('enter',null,`👋 ${ENTER_NAMES[Math.floor(Math.random()*ENTER_NAMES.length)]} 进入直播间`); },6000);
 }
-function updOnline(){ $('onlineCnt').textContent=`👁 ${onlineN.toLocaleString()} 观看`; }
-function addDm(cls,name,text){
-  const d=$('danmaku'); const el=document.createElement('div');
+function updOnline(){ $('onlineCnt').textContent=onlineN.toLocaleString(); $('heatCnt').textContent='🔥热度 '+heatN.toLocaleString(); }
+function addDm(cls,name,text,rootId){
+  const d=$(rootId||'danmaku'); if(!d)return; const el=document.createElement('div');
   el.className='dm '+cls;
-  el.innerHTML = cls==='sys' ? `📢 <span>${text}</span>` : `<span class="badge">${name.slice(0,1)}</span><span class="n">${name}：</span><span class="v">${text}</span>`;
+  el.innerHTML = name==null ? `<span>${text}</span>` : `<span class="badge">${name.slice(0,1)}</span><span class="n">${name}：</span><span class="v">${text}</span>`;
   d.appendChild(el); while(d.children.length>8) d.removeChild(d.firstChild);
 }
-function closeRoom(){ $('room').classList.remove('active'); clearInterval(roomTimer); }
-function toggleGiftPanel(){ $('giftPanel').classList.toggle('open'); renderGifts(); }
+function closeRoom(){ $('room').classList.remove('active'); clearInterval(roomTimer); clearInterval(enterTimer); }
+function fakeGiftToHost(root){
+  const g=GIFTS[1+Math.floor(Math.random()*4)];
+  const who=FAKE_NAMES[Math.floor(Math.random()*FAKE_NAMES.length)];
+  const el=document.createElement('div'); el.className='giftfx';
+  el.innerHTML=`<div class="gava">${who.slice(0,1)}</div><div class="gname">${who} 送出 ${g.name}</div><div class="gicon">${g.icon}</div>`;
+  $(root||'giftLayer').appendChild(el); setTimeout(()=>el.remove(),2500);
+  addDm('sys',null,`${who} 送出 ${g.name} ×1`, root==='hostGiftLayer'?'hostDanmaku':null);
+  return g.price;
+}
+function toggleGiftPanel(){ $('giftPanel').classList.toggle('open'); renderGifts(); syncCoins(); }
 function renderGifts(){
   $('giftGrid').innerHTML = GIFTS.map((g,i)=>`
     <div class="gitem ${i===S.selectedGift?'sel':''}" onclick="S.selectedGift=${i};renderGifts()">
-      <div class="gi">${g.icon}</div><div class="gn">${g.name}</div><div class="gp">🪙${g.price}</div>
-    </div>`).join('');
+      <div class="gi">${g.icon}</div><div class="gn">${g.name}</div><div class="gp">🪙${g.price}</div></div>`).join('');
 }
-function sendGift(){
-  const g=GIFTS[S.selectedGift];
-  if(S.coins<g.price){ toast('星币不足，请先充值'); return; }
-  S.coins-=g.price; syncCoins();
+function giftRecharge(){ $('giftPanel').classList.remove('open'); openRecharge(); }
+function sendGift(n){
+  const g=GIFTS[S.selectedGift]; const cost=g.price*n;
+  if(S.coins<cost){ toast('星币不足，请先充值'); $('giftPanel').classList.remove('open'); openRecharge(); return; }
+  S.coins-=cost; syncCoins(); save();
+  addLedger(g.icon,`送出礼物「${g.name}」×${n} 给 ${S.curHost.name}`,-cost);
   const el=document.createElement('div'); el.className='giftfx';
-  el.innerHTML=`<div class="gava">🙋‍♂️</div><div class="gname">海曙 送出 ${g.name} ×1</div><div class="gicon">${g.icon}</div>`;
-  $('giftLayer').appendChild(el); setTimeout(()=>el.remove(),2300);
-  addDm('sys',null,`海曙 送出 ${g.name} ×1（-🪙${g.price}）`);
+  el.innerHTML=`<div class="gava">🙋‍♂️</div><div class="gname">海曙 送出 ${g.name} ×${n}</div><div class="gicon">${g.icon}</div>`;
+  $('giftLayer').appendChild(el); setTimeout(()=>el.remove(),2500);
+  if(n>=10){ const c=document.createElement('div'); c.className='combo'; c.textContent=`连送 ×${n}!`; $('giftLayer').appendChild(c); setTimeout(()=>c.remove(),1500); }
+  addDm('sys',null,`海曙 送出 ${g.name} ×${n}（-🪙${fmt(cost)}）`);
+  heatN+=g.price*n; updOnline();
 }
 function toggleFollow(){
   const n=S.curHost.name;
   if(S.follows.has(n)){ S.follows.delete(n); toast('已取消关注'); }
   else { S.follows.add(n); toast('关注成功，开播将提醒你'); }
   const fb=$('followBtn'); fb.classList.toggle('done',S.follows.has(n));
-  fb.textContent=S.follows.has(n)?'已关注':'+ 关注'; syncFollows();
+  fb.textContent=S.follows.has(n)?'已关注':'+ 关注'; syncFollows(); save();
 }
-function quickChatInput(){
-  const t=prompt('说点什么…'); if(t&&t.trim()) addDm('dm','海曙',t.trim());
+function likeRoom(){
+  myLikeCnt++; heatN+=2; updOnline();
+  const h=document.createElement('div'); h.className='heart';
+  h.style.right=(20+Math.random()*60)+'px';
+  h.style.setProperty('--dx',(Math.random()*60-30)+'px');
+  h.textContent='❤️'; $('room').querySelector('.video').appendChild(h);
+  setTimeout(()=>h.remove(),1900);
 }
-function closeRoomSheet(fn){ toggleGiftPanel(); fn(); }
+function openRoomInput(){ $('roomMsgInput').value=''; $('emojiRow').innerHTML=EMOJIS.map(e=>`<span onclick="addEmoji('${e}')">${e}</span>`).join(''); openSheet('inputSheet'); }
+function addEmoji(e){ const i=$('roomMsgInput'); i.value+=e; i.focus(); }
+function sendRoomMsg(){
+  const t=$('roomMsgInput').value.trim(); if(!t)return;
+  closeSheet('inputSheet');
+  addDm('dm','海曙',t, $('hostRoom').classList.contains('active')?'hostDanmaku':null);
+}
+
+/* ============ 贡献榜 ============ */
+function openRank(){
+  const all=[...RANKERS,{ava:'🙋‍♂️',name:'海曙（我）',amt:S.ledger.filter(l=>l.amt<0).reduce((a,b)=>a-b.amt,0)}];
+  all.sort((a,b)=>b.amt-a.amt);
+  $('rankList').innerHTML=all.map((r,i)=>`
+    <div class="rankrow"><div class="no" style="color:${['#ffd700','#c0c0c0','#cd7f32'][i]||'var(--txt2)'}">${i+1}</div>
+    <div class="ava" style="width:36px;height:36px;font-size:18px">${r.ava}</div>
+    <div><div style="font-size:13px;font-weight:600">${r.name}</div></div>
+    <div class="amt">🪙${fmt(r.amt)}</div></div>`).join('');
+  openSheet('rankSheet');
+}
+
+/* ============ 分享 ============ */
+function openShare(){ openSheet('shareSheet'); }
+function doShare(t){
+  closeSheet('shareSheet');
+  if(t==='复制链接'){ const url='https://badwritten-cn.github.io/star-live-mvp/';
+    (navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>toast('链接已复制')).catch(()=>toast(url)); return; }
+  toast(`${t}：分享成功（演示）`);
+}
 
 /* ============ 交友 ============ */
+const FCATS=['全部','同城','18-25','26+'];
+function renderFCats(){ $('fCats').innerHTML=FCATS.map(c=>`<span class="cat ${S.fFilter===c?'on':''}" onclick="S.fFilter='${c}';renderFCats();renderSwipe()">${c}</span>`).join(''); }
+function filteredUsers(){
+  if(S.fFilter==='同城') return USERS.filter(u=>u.city.startsWith('上海'));
+  if(S.fFilter==='18-25') return USERS.filter(u=>u.age<=25);
+  if(S.fFilter==='26+') return USERS.filter(u=>u.age>=26);
+  return USERS;
+}
 function renderSwipe(){
-  if(S.swipeIdx>=USERS.length){ $('swipeArea').innerHTML=`<div class="ucard"><div class="photo">🌙</div><div class="info" style="text-align:center"><b>今晚的缘分已看完</b><p style="color:var(--txt2);font-size:12px;margin-top:6px">正式版接入推荐算法 + 真实用户</p></div></div>`; return; }
-  const u=USERS[S.swipeIdx];
+  const list=filteredUsers();
+  if(S.swipeIdx>=list.length){ $('swipeArea').innerHTML=`<div class="ucard"><div class="photo">🌙</div><div class="info" style="text-align:center"><b>今晚的缘分已看完</b><p style="color:var(--txt2);font-size:12px;margin-top:6px">正式版接入推荐算法 + 真实用户</p></div></div>`; return; }
+  const u=list[S.swipeIdx];
   $('swipeArea').innerHTML=`
     <div class="ucard" onclick="openChat('${u.name}')">
       <div class="photo" style="background:linear-gradient(160deg,#2b1a3d,#101430)">${u.ava}</div>
@@ -437,32 +813,90 @@ function renderSwipe(){
         <p style="color:var(--txt2);font-size:12px;margin-top:4px">📍${u.city}</p>
         <p style="font-size:13px;margin-top:6px">${u.bio}</p>
         <div class="tags">${u.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-      </div>
-    </div>`;
+      </div></div>`;
 }
-function swipeLike(){ if(S.swipeIdx<USERS.length){ S.follows.add(USERS[S.swipeIdx].name); syncFollows(); toast('已关注 '+USERS[S.swipeIdx].name+' ❤️'); } S.swipeIdx++; renderSwipe(); }
-function swipeSkip(){ if(S.swipeIdx<USERS.length){ const c=$('swipeArea').firstElementChild; if(c)c.classList.add('gone'); } setTimeout(()=>{S.swipeIdx++; renderSwipe();},280); }
+function animSwipe(dir,after){
+  const c=$('swipeArea').firstElementChild; if(c)c.classList.add(dir);
+  setTimeout(after,280);
+}
+function swipeLike(){
+  const list=filteredUsers(); if(S.swipeIdx>=list.length)return;
+  const u=list[S.swipeIdx];
+  animSwipe('gone-right',()=>{
+    S.follows.add(u.name); syncFollows(); save();
+    if(u.matchBack){ S.swipeIdx++; renderSwipe(); showMatch(u); }
+    else{ toast('已关注 '+u.name+' ❤️'); S.swipeIdx++; renderSwipe(); }
+  });
+}
+function swipeSuper(){
+  const list=filteredUsers(); if(S.swipeIdx>=list.length)return;
+  const u=list[S.swipeIdx];
+  animSwipe('gone-right',()=>{
+    S.follows.add(u.name); syncFollows(); save();
+    toast(`⭐ 超级喜欢已发送，${u.name} 将优先看到你`);
+    showMatch(u); S.swipeIdx++; renderSwipe();
+  });
+}
+function swipeSkip(){
+  const list=filteredUsers(); if(S.swipeIdx>=list.length)return;
+  animSwipe('gone',()=>{ S.swipeIdx++; renderSwipe(); });
+}
+let matchTarget=null;
+function showMatch(u){
+  matchTarget=u; $('matchAva').textContent=u.ava; $('matchName').textContent=u.name;
+  openSheet('matchSheet');
+}
+function matchChat(){ closeSheet('matchSheet'); openChat(matchTarget.name); }
 
 /* ============ 消息 / 私聊 ============ */
+function totalUnread(){ return S.conversations.reduce((a,c)=>a+(c.unread||0),0); }
+function syncUnread(){
+  const n=totalUnread(); const d=$('msgDot');
+  d.style.display=n?'flex':'none'; d.textContent=n>99?'99+':n;
+}
 function renderConvs(){
-  $('convList').innerHTML = S.conversations.map(c=>`
-    <div class="conv" onclick="openChat('${c.name}')">
+  const sorted=[...S.conversations].sort((a,b)=>(b.pin?1:0)-(a.pin?1:0));
+  $('convList').innerHTML = sorted.map(c=>`
+    <div class="conv ${c.pin?'pinned':''}" onclick="openChat('${c.name}')">
       <div class="ava">${c.ava}</div>
-      <div class="c"><div class="name"><b>${c.name}</b><time>${c.time}</time></div><div class="last">${c.last}</div></div>
+      <div class="c"><div class="name"><b>${c.pin?'📌 ':''}${c.name}</b><time>${c.time}</time></div>
+      <div class="last">${c.last||'（无消息）'}</div></div>
+      ${c.unread?`<div class="dot">${c.unread>99?'99+':c.unread}</div>`:''}
+      <span class="more" onclick="event.stopPropagation();convActions('${c.name}')">···</span>
     </div>`).join('');
+  syncUnread();
+}
+function convActions(name){
+  const c=S.conversations.find(x=>x.name===name); if(!c)return;
+  $('convSheetBody').innerHTML=`
+    <h3 style="text-align:center;font-size:14px">${c.name}</h3>
+    <div class="menulist" style="margin-bottom:0">
+      <div class="mrow" onclick="pinConv('${name}')">📌 ${c.pin?'取消置顶':'置顶会话'}</div>
+      <div class="mrow" style="color:var(--accent)" onclick="delConv('${name}')">🗑 删除会话</div>
+      <div class="mrow" onclick="closeSheet('convSheet')">取消</div>
+    </div>`;
+  openSheet('convSheet');
+}
+function pinConv(name){
+  const c=S.conversations.find(x=>x.name===name); c.pin=!c.pin;
+  closeSheet('convSheet'); renderConvs(); save();
+}
+function delConv(name){
+  S.conversations=S.conversations.filter(x=>x.name!==name);
+  closeSheet('convSheet'); renderConvs(); save(); toast('会话已删除');
 }
 function openChat(name){
   let c=S.conversations.find(x=>x.name===name);
   if(!c){
     const u=USERS.find(u=>u.name===name); const h=HOSTS.find(h=>h.name===name);
-    c={id:name, ava:u?u.ava:(h?h.ava:'🙂'), name, last:'', time:'刚刚',
+    c={id:name, ava:u?u.ava:(h?h.ava:'🙂'), name, last:'', time:'刚刚', unread:0,
        msgs:[{me:0,t:u?`你好呀，我是${u.name}，看你也喜欢${u.tags[0]}？`:'欢迎来到直播间~'}]};
     S.conversations.unshift(c);
   }
-  S.curUser=c;
+  S.curUser=c; c.unread=0;
   $('chatAva').textContent=c.ava; $('chatName').textContent=c.name;
   renderChatMsgs(); $('chat').classList.add('active');
-  $('msgDot').style.display='none';
+  renderConvs(); save();
 }
 function renderChatMsgs(){
   $('chatBody').innerHTML=S.curUser.msgs.map(m=>`
@@ -472,50 +906,163 @@ function renderChatMsgs(){
 function sendChatMsg(){
   const inp=$('chatInput'); const t=inp.value.trim(); if(!t)return; inp.value='';
   S.curUser.msgs.push({me:1,t}); renderChatMsgs();
-  S.curUser.last=t; S.curUser.time='刚刚';
-  setTimeout(()=>{ const rs=['嗯嗯，你说 👀','哈哈哈我也是！','在忙，晚点聊~','真的假的？','改天一起呀 😊','送你个小礼物回礼 🌹'];
-    const r=rs[Math.floor(Math.random()*rs.length)];
-    S.curUser.msgs.push({me:0,t:r}); renderChatMsgs(); S.curUser.last=r; renderConvs(); },1200+Math.random()*1500);
+  S.curUser.last=t; S.curUser.time=now(); save();
+  setTimeout(()=>{
+    const r=REPLY_POOL[Math.floor(Math.random()*REPLY_POOL.length)];
+    const chatting = $('chat').classList.contains('active');
+    S.curUser.msgs.push({me:0,t:r});
+    if(!chatting) S.curUser.unread=(S.curUser.unread||0)+1;
+    else renderChatMsgs();
+    S.curUser.last=r; S.curUser.time=now(); renderConvs(); save();
+  },1200+Math.random()*1500);
 }
 function closeChat(){ $('chat').classList.remove('active'); renderConvs(); }
 
 /* ============ 充值 ============ */
-let amtSel=0;
 function openRecharge(){
-  amtSel=0; pickPay(S.payMethod);
+  S.amtSel=0; S.customMode=false;
+  $('customRow').classList.remove('show'); $('customAmt').value='';
+  pickPay(S.payMethod);
   $('amountGrid').innerHTML=AMOUNTS.map((a,i)=>`
-    <div class="amt ${i===0?'sel':''}" onclick="amtSel=${i};document.querySelectorAll('.amt').forEach((e,j)=>e.classList.toggle('sel',j===${i}));updPayBtn()">
+    <div class="amt ${i===0?'sel':''}" data-i="${i}" onclick="pickAmt(${i})">
       <div class="c">🪙${fmt(a.coin)}</div><div class="p">¥${a.price}</div>
       ${a.bonus?`<div class="bonus">${a.bonus}</div>`:''}
-    </div>`).join('');
-  updPayBtn(); $('rechargeSheet').classList.add('open');
+    </div>`).join('')+`
+    <div class="amt" id="customTile" onclick="toggleCustom()"><div class="c" style="font-size:15px">✏️ 自定义</div><div class="p">1元=100币</div></div>`;
+  updPayBtn(); openSheet('rechargeSheet');
+}
+function pickAmt(i){
+  S.amtSel=i; S.customMode=false;
+  document.querySelectorAll('.amt').forEach(e=>e.classList.toggle('sel', e.dataset.i==String(i)));
+  $('customRow').classList.remove('show'); updPayBtn();
+}
+function toggleCustom(){
+  S.customMode=true;
+  document.querySelectorAll('.amt').forEach(e=>e.classList.remove('sel'));
+  $('customTile').classList.add('sel');
+  $('customRow').classList.add('show'); $('customAmt').focus(); updPayBtn();
+}
+function updPayBtn(){
+  let price;
+  if(S.customMode){ const v=Math.floor(+$('customAmt').value||0);
+    $('customCoin').textContent=fmt(Math.min(v,5000)*100);
+    price=(v>0&&v<=5000)?v:null;
+  } else price=AMOUNTS[S.amtSel].price;
+  $('payBtn').textContent = price?`确认支付 ¥${price.toFixed(2)}`:'请输入充值金额';
+  $('payBtn').disabled=!price;
 }
 function pickPay(m){ S.payMethod=m;
   $('payWechat').classList.toggle('sel',m==='wechat');
   $('payAlipay').classList.toggle('sel',m==='alipay'); }
-function updPayBtn(){ $('payBtn').textContent=`确认支付 ¥${AMOUNTS[amtSel].price.toFixed(2)}`; }
-function closeSheet(id){ $(id).classList.remove('open'); }
 function doPay(){
-  const a=AMOUNTS[amtSel]; const btn=$('payBtn');
-  btn.disabled=true;
-  const channel = S.payMethod==='wechat'?'微信支付':'支付宝';
-  btn.textContent=`正在唤起${channel}…`;
-  setTimeout(()=>{ btn.textContent=`${channel}支付确认中…`; },700);
+  let price, coin;
+  if(S.customMode){ const v=Math.floor(+$('customAmt').value||0); if(!v||v>5000){toast('金额需在 1-5000 元之间');return;} price=v; coin=v*100; }
+  else { price=AMOUNTS[S.amtSel].price; coin=AMOUNTS[S.amtSel].coin; }
+  const channel=S.payMethod==='wechat'?'微信支付':'支付宝';
+  $('payChannelIco').textContent = S.payMethod==='wechat'?'💚':'🔵';
+  $('payAmt').textContent='¥'+price.toFixed(2);
+  $('payPending').style.display='block'; $('payDone').style.display='none';
+  closeSheet('rechargeSheet'); openSheet('paySheet');
+  setTimeout(()=>{ $('payPending').style.display='none'; $('payDone').style.display='block';
+    $('payDoneSub').textContent=`${channel} 支付 ¥${price.toFixed(2)} · 到账 🪙${fmt(coin)}`;
+  },1600);
   setTimeout(()=>{
-    S.coins+=a.coin; syncCoins(); closeSheet('rechargeSheet');
-    btn.disabled=false; updPayBtn();
+    closeSheet('paySheet');
+    S.coins+=coin; syncCoins();
+    addLedger('💰',`${channel}充值`,+coin);
     const sys=S.conversations.find(c=>c.id==='sys');
-    sys.msgs.push({me:0,t:`充值成功：${channel} 支付 ¥${a.price}.00，到账 🪙${fmt(a.coin)}（模拟订单号 MD${Date.now()}）`});
-    sys.last=`充值成功，到账 🪙${fmt(a.coin)}`; sys.time='刚刚';
-    if($('pg-msg').classList.contains('active')){ renderConvs(); $('msgDot').style.display='block'; }
-    toast(`✅ 充值成功，到账 🪙${fmt(a.coin)}`);
-    addDm&&0;
-  },1800);
+    sys.msgs.push({me:0,t:`充值成功：${channel} 支付 ¥${price.toFixed(2)}，到账 🪙${fmt(coin)}（模拟订单号 MD${Date.now()}）`});
+    sys.last=`充值成功，到账 🪙${fmt(coin)}`; sys.time=now(); sys.unread=(sys.unread||0)+1;
+    renderConvs(); save(); toast(`✅ 充值成功，到账 🪙${fmt(coin)}`);
+  },2900);
+}
+
+/* ============ 账本页 ============ */
+function renderLedger(){
+  const l=[...S.ledger].reverse();
+  $('ledgerList').innerHTML = l.length? l.map(e=>`
+    <div class="lrow"><div class="li">${e.icon}</div>
+      <div class="lc"><div class="lt">${e.title}</div><div class="ls">${e.time}</div></div>
+      <div class="lam ${e.amt>=0?'plus':'minus'}">${e.amt>=0?'+':''}${fmt(e.amt)}</div></div>`).join('')
+    : '<div class="empty">暂无流水，去充个值试试</div>';
+}
+
+/* ============ 关注列表 ============ */
+function renderFollowList(){
+  const fs=[...S.follows];
+  $('followList').innerHTML = fs.length? fs.map(n=>{
+    const h=HOSTS.find(x=>x.name===n); const u=USERS.find(x=>x.name===n);
+    const ava=h?h.ava:(u?u.ava:'🙂'); const sub=h?`${h.cat}主播 · ${h.live?'直播中':'未开播'}`:(u?u.city:'用户');
+    return `<div class="lrow"><div class="ava" style="width:40px;height:40px;font-size:20px">${ava}</div>
+      <div class="lc"><div class="lt">${n}</div><div class="ls">${sub}</div></div>
+      <div class="wbtn" style="flex:0 0 64px;padding:7px 0" onclick="openChat('${n}')">私聊</div>
+      <div class="wbtn" style="flex:0 0 64px;padding:7px 0;background:var(--panel2);color:var(--txt2)" onclick="unfollow('${n}')">取关</div></div>`;
+  }).join('') : '<div class="empty">还没有关注任何人<br>去直播间或邂逅页点个 ❤️ 吧</div>';
+}
+function unfollow(n){ S.follows.delete(n); syncFollows(); renderFollowList(); save(); toast('已取消关注 '+n); }
+
+/* ============ 我的 / 等级 ============ */
+function renderMe(){
+  syncCoins(); syncFollows();
+  const spent=S.ledger.filter(l=>l.amt<0).reduce((a,b)=>a-b.amt,0);
+  const lv=8+Math.floor(spent/20000);
+  const pct=Math.min(100,Math.round((spent%20000)/200));
+  $('meLv').textContent='Lv.'+lv;
+  $('lvSpent').textContent=`累计消费 🪙${fmt(spent)}`;
+  $('lvProg').style.width=pct+'%';
+}
+
+/* ============ 主播端 ============ */
+let H={live:false,t0:0,viewers:0,income:0,gifts:0,peak:0,timer:null};
+function openStart(){
+  if(H.live){ toast('你已在直播中'); return; }
+  $('startCats').innerHTML=START_CATS.map((c,i)=>`<span class="cp ${i===0?'on':''}" onclick="pickStartCat(this)">${c}</span>`).join('');
+  openSheet('startSheet');
+}
+function pickStartCat(el){ document.querySelectorAll('#startCats .cp').forEach(e=>e.classList.remove('on')); el.classList.add('on'); }
+function doStartLive(){
+  const title=$('liveTitle').value.trim()||'未命名直播间';
+  const cat=document.querySelector('#startCats .cp.on').textContent;
+  closeSheet('startSheet');
+  H={live:true,t0:Date.now(),viewers:3,income:0,gifts:0,peak:3,timer:null,title,cat};
+  $('hostDanmaku').innerHTML='';
+  addDm('sys',null,`「${title}」开播成功，正式版将同步推流至腾讯云`);
+  $('hostRoom').classList.add('active');
+  H.timer=setInterval(()=>{
+    const s=Math.floor((Date.now()-H.t0)/1000);
+    $('hDur').textContent=`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+    H.viewers=Math.max(3,H.viewers+Math.floor(Math.random()*9)-3);
+    H.peak=Math.max(H.peak,H.viewers);
+    $('hViews').textContent=H.viewers; $('hIncome').textContent=fmt(H.income);
+    const r=Math.random();
+    if(r<.4){ const [n,t]=FAKE_MSGS[Math.floor(Math.random()*FAKE_MSGS.length)]; addDm('dm',n,t,'hostDanmaku'); }
+    if(r>.62){ const p=fakeGiftToHost('hostGiftLayer'); H.income+=p; H.gifts++; $('hIncome').textContent=fmt(H.income); }
+    if(r>.94){ addDm('enter',null,`👋 ${ENTER_NAMES[Math.floor(Math.random()*ENTER_NAMES.length)]} 进入直播间`,'hostDanmaku'); }
+  },2000);
+}
+function confirmEndLive(){
+  clearInterval(H.timer);
+  const dur=Math.floor((Date.now()-H.t0)/1000);
+  const share=Math.floor(H.income*0.5);
+  $('endStats').innerHTML=`
+    <div>⏱ 直播时长：<b>${String(Math.floor(dur/60)).padStart(2,'0')} 分 ${dur%60} 秒</b></div>
+    <div>👁 观看峰值：<b>${H.peak}</b> 人</div>
+    <div>🎁 收到礼物：<b>${H.gifts}</b> 个 = 🪙${fmt(H.income)}</div>
+    <div style="color:var(--gold)">💰 预计分成（50%）：<b>🪙${fmt(share)}</b></div>`;
+  $('hostRoom').classList.remove('active');
+  openSheet('endSheet');
+}
+function claimIncome(){
+  const share=Math.floor(H.income*0.5);
+  if(share>0){ S.coins+=share; addLedger('🎥',`直播收益结算（${H.title}）`,+share); }
+  H.live=false; H.income=0; H.gifts=0;
+  closeSheet('endSheet'); syncCoins(); save();
+  toast(share>0?`✅ 收益 🪙${fmt(share)} 已入账`:'本场没有收到礼物，下次加油');
 }
 
 /* ============ 初始化 ============ */
-renderHome(); renderSwipe(); renderConvs(); syncCoins(); syncFollows();
-document.addEventListener('click',e=>{ /* 点礼物面板外关闭 */ });
+load();
+renderHome(); renderFCats(); renderSwipe(); renderConvs(); syncCoins(); syncFollows(); syncUnread(); renderMe();
 </script>
 </body>
 </html>
